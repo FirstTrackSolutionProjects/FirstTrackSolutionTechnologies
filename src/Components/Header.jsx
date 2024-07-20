@@ -97,7 +97,7 @@ const Header = () => {
             <Link to="/" className='text-black hover:underline hover:decoration-orange-500'>HOME</Link>
             <Link to="/career" className='text-black hover:underline hover:decoration-orange-500'>CAREER</Link>
             <div className="relative" ref={servicesDropdownRef}>
-            <Link onClick={toggleServicesDropdown} to="/service" className='text-black hover:underline hover:decoration-orange-500'>SERVICES</Link>
+            <Link onClick={toggleServicesDropdown} to="/services" className='text-black hover:underline hover:decoration-orange-500'>SERVICES</Link>
             {isServicesDropdownOpen && (
               <div className="absolute left-0 top-full mt-2 w-48 bg-white text-gray-800 shadow-lg rounded-lg py-2">
                 <Link to="" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Information Technology</Link>

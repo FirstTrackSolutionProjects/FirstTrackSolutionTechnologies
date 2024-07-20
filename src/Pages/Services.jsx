@@ -37,20 +37,20 @@ const Services=()=>{
 
                 {/*div 2*/}
                 <div className="text-center mt-8 ">
-                    <div className="text-blue-500 text-xl font-inter font-bold">Our Brand</div>
-                    <div className="text-[50px] font-bold">Clients</div>
+                    <div className="text-blue-500 md:text-xl font-inter font-bold">Our Brand</div>
+                    <div className="text-2xl md:text-[50px] font-bold">Clients | Parent Company</div>
                 </div>
-                <div className="flex space-x-2 p-10">
-                    <div className="w-[30%] h-48 bg-white container shadow-gray-700 shadow-2xl rounded-lg items-center"><img src="images/fuddins.webp" className=" py-3 items-center justify-center object-cover"></img></div>
-                    <div className="w-[70%] px-5 py-3">
+                <div className="md:flex space-x-2 p-4 md:p-10">
+                    <div className="md:w-[30%] h-40 md:h-48 bg-white container shadow-gray-700 shadow-lg md:shadow-2xl rounded-lg items-center"><img src="images/fuddins.webp" className="py-3 items-center justify-center object-cover"></img></div>
+                    <div className="md:w-[70%] md:px-5 py-3">
                         <div className="text-gray-600">Fuddins is the daily essentials grocery mart whereas customer can buy their daily products physical from Fuddins Mart Store or may buy online through our Fuddins App. Products — Grocery, Fresh Vegetables,Fruits, Diary, Baby care products, and many more</div>
                         <a href="https://fuddins.com/" target="_blank" rel="noopener noreferrer" ><div className="flex font-bold container bg-green-500 w-40 p-2 text-center mt-6 items-center justify-center rounded-sm bg-opacity-90 transition-transform transform hover:scale-125"><ArrowRightIcon className="w-4 h-6 text-3xl text-white mr-2" />
                         <span className="text-white">Explore Now</span></div></a>
                     </div>
                 </div>
-                <div className="flex space-x-2 px-10">
-                    <div className="w-[30%] h-48 bg-white container shadow-gray-700 shadow-2xl rounded-lg items-center"><img src="images/fuddins2.jpg" className=" items-center justify-center h-36 object-cover my-6 mx-auto"></img></div>
-                    <div className="w-[70%] px-5 py-3">
+                <div className="md:flex space-x-2 px-4 md:px-10">
+                    <div className="md:w-[30%] h-40 md:h-48 bg-white container shadow-gray-700 shadow-lg md:shadow-2xl rounded-lg items-center"><img src="images/fuddins2.jpg" className=" items-center justify-center h-36 object-cover my-6 mx-auto"></img></div>
+                    <div className="md:w-[70%] md:px-5 py-3">
                         <div className="text-gray-600">FUDDINS Mart is the online home delivery services app, with the categories of food, groceries, vegetables, fruits, diary, beverages, snacks, deserts, house hold item, beauty & cosmetics, baby care products, tobacco, garments, pharma, footwear, electronics & electrical products, sports item, pc & laptop & many more.</div>
                         <a href="https://fuddins.com/" target="_blank" rel="noopener noreferrer" ><div className="flex font-bold container bg-green-500 w-40 p-2 text-center mt-6 items-center justify-center rounded-sm bg-opacity-90 transition-transform transform hover:scale-125"><ArrowRightIcon className="w-4 h-6 text-3xl text-white mr-2" />
                         <span className="text-white">Explore Now</span></div></a>
@@ -58,15 +58,17 @@ const Services=()=>{
                 </div>
             </div>
 
-            <div className="mt-28 rounded-2xl h-fit container shadow-md items-center justify-between md:p-10 bg-gradient-to-b from-blue-950 via-indigo-900 to-slate-300 w-full mx-auto">
-                <div className="flex">
-                    <div className="w-[45%] my-auto font-inter">
-                        <div className="text-white text-2xl md:text-4xl font-extrabold px-10">Let us together build a flourishing business</div>
-                        <div className="text-white text-sm md:text-base px-10 py-5 text-justify font-semibold">When connected with us, you aren’t growing your business alone. We have your back and put in our best to contribute to the growth of your entire team and organization. So, if you are looking for the right agency that’ll help you build a good online presence and bring in more conversions and revenue, we are right here!</div>
+            <div className="p-4 md:mx-32">
+            <div className="md:mt-28 md:p-10 py-5 rounded-2xl h-fit container shadow-md items-center justify-between  bg-gradient-to-b from-blue-950 via-indigo-900 to-slate-300 w-full">
+                <div className="md:flex">
+                    <div className="md:w-[45%] md:my-auto font-inter ">
+                        <div className="text-white text-2xl md:text-4xl font-extrabold px-5 md:px-10">Let us together build a flourishing business</div>
+                        <div className="text-white text-sm md:text-base px-5 md:px-10 py-5 text-justify font-semibold">When connected with us, you aren’t growing your business alone. We have your back and put in our best to contribute to the growth of your entire team and organization. So, if you are looking for the right agency that’ll help you build a good online presence and bring in more conversions and revenue, we are right here!</div>
                     </div>
-                    <div className="-mt-52 w-[55%] p-8"><img src="images/banner-6.webp" className=""></img></div>
+                    <div className="md:-mt-52 md:w-[55%] md:p-8"><img src="images/banner-6.webp" className=""></img></div>
                 </div>
                 
+            </div>
             </div>
 
 
