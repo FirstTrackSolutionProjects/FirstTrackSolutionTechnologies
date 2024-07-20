@@ -1,0 +1,308 @@
+import React, { useState } from 'react';
+import { countries } from 'countries-list';
+
+const CareerForm = () => {
+  const countryList = Object.values(countries);
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    streetAddress: '',
+    city: '',
+    postalCode: '',
+    country: '',
+    description: '',
+    qualification: '',
+    cv: null
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+
+  const handleFileChange = (e) => {
+    setFormData({
+      ...formData,
+      cv: e.target.files[0]
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission logic here
+    console.log(formData);
+  };
+
+  return (
+    <div className="max-w-4xl mx-auto p-6">
+      <form onSubmit={handleSubmit} className="space-y-6">
+        {/* Name Fields */}
+        <div className="md:flex md:space-x-4">
+          <div className="flex-1">
+            <label htmlFor="firstName" className="  text-neutral-500 text-sm">
+              First Name
+            </label>
+            <input
+              type="text"
+              id="firstName"
+              name="firstName"
+              placeholder='Eg: John'
+              value={formData.firstName}
+              onChange={handleChange}
+              className="mt-1 focus:outline-none w-full  border border-gray-600 shadow-md bg-neutral-200 h-8 p-1"
+              required
+            />
+          </div>
+          <div className="flex-1">
+            <label htmlFor="lastName" className=" text-neutral-500 text-sm">
+              Last Name
+            </label>
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              placeholder='Eg: Doe'
+              value={formData.lastName}
+              onChange={handleChange}
+              className="mt-1 focus:outline-none w-full border-gray-700 border bg-neutral-200 h-8 shadow-md p-1 "
+              required
+            />
+          </div>
+        </div>
+
+        {/* Email and Phone Fields */}
+        <div className="md:flex md:space-x-4">
+          <div className="flex-1">
+            <label htmlFor="email" className=" text-neutral-500 text-sm">
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder='Eg: john@doe.com'
+              value={formData.email}
+              onChange={handleChange}
+              className="mt-1 focus:outline-none border w-full border-gray-700 bg-neutral-200 h-8 shadow-md p-1 "
+              required
+            />
+          </div>
+          <div className="flex-1">
+            <label htmlFor="phone" className=" text-neutral-500 text-sm">
+              Phone
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              className="mt-1 focus:outline-none border w-full border-gray-700 bg-neutral-200 h-8 shadow-md p-1"
+              required
+            />
+          </div>
+        </div>
+
+        {/* Address Fields */}
+        <div className="md:flex md:space-x-4">
+          <div className="flex-1">
+            <label htmlFor="streetAddress" className=" text-neutral-500 text-sm">
+              Street Address
+            </label>
+            <input
+              type="text"
+              id="streetAddress"
+              name="streetAddress"
+              placeholder='Eg: 24 Wallaby Way'
+              value={formData.streetAddress}
+              onChange={handleChange}
+              className="mt-1 focus:outline-none border w-full border-gray-700 bg-neutral-200 h-8 shadow-md p-1"
+              required
+            />
+          </div>
+          <div className="flex-1">
+            <label htmlFor="city" className=" text-neutral-500 text-sm">
+              City
+            </label>
+            <input
+              type="text"
+              id="city"
+              name="city"
+              placeholder='Eg: Sydney'
+              value={formData.city}
+              onChange={handleChange}
+              className="mt-1 focus:outline-none border w-full border-gray-700 bg-neutral-200 h-8 shadow-md p-1 "
+              required
+            />
+          </div>
+          <div className="flex-1">
+            <label htmlFor="postalCode" className=" text-neutral-500 text-sm">
+              Postal Code
+            </label>
+            <input
+              type="text"
+              id="postalCode"
+              name="postalCode"
+              placeholder='Eg: 2000'
+              value={formData.postalCode}
+              onChange={handleChange}
+              className="mt-1 focus:outline-none border w-full border-gray-700 bg-neutral-200 h-8 shadow-md p-1 "
+              required
+            />
+          </div>
+          <div className="flex-1">
+            <label htmlFor="state" className=" text-neutral-500 text-sm">
+              Country
+            </label>
+            <select
+              id="country"
+              name="country" 
+              onChange={handleChange}
+              className="mt-1  focus:outline-none block w-full p-1 border text-neutral-500 border-gray-700 bg-neutral-200 h-8 ">
+              {countryList.map((country) => (
+                <option key={country.name} value={formData.country.name}>
+                  {country.name}
+                </option>
+              ))}
+            </select>
+            
+            
+          </div>
+        </div>
+
+        {/* Description */}
+        <div>
+          <label htmlFor="description" className=" text-neutral-500 text-sm">
+            Description
+          </label>
+          <textarea
+            id="description"
+            name="description"
+            placeholder='Your message here..'
+            value={formData.description}
+            onChange={handleChange}
+            rows="4"
+            className="mt-1 focus:outline-none border w-full border-gray-700 bg-neutral-200 h-20 shadow-md p-1 "
+          />
+        </div>
+
+        {/* Highest Qualification */}
+        <fieldset>
+          <legend className="text-sm font-medium text-neutral-500">Highest Qualification</legend>
+          <div className="mt-2 space-y-2">
+            
+            <div className="flex items-center">
+              <input
+                type="radio"
+                id="postgrad"
+                name="qualification"
+                value="Post Grduation"
+                checked={formData.qualification === "Post Graduation"}
+                onChange={handleChange}
+                className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
+              />
+              <label htmlFor="bachelor" className="ml-3 block font-medium text-neutral-500 text-sm">
+              Post Graduation
+              </label>
+            </div>
+            <div className="flex items-center">
+              <input
+                type="radio"
+                id="grad"
+                name="qualification"
+                value="Graduation"
+                checked={formData.qualification === "Graduation"}
+                onChange={handleChange}
+                className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
+              />
+              <label htmlFor="masters" className="ml-3 block font-medium text-neutral-500 text-sm">
+              Graduation
+              </label>
+            </div>
+            <div className="flex items-center">
+              <input
+                type="radio"
+                id="btech"
+                name="qualification"
+                value="BTech"
+                checked={formData.qualification === 'BTech'}
+                onChange={handleChange}
+                className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
+              />
+              <label htmlFor="doctorate" className="ml-3 block font-medium text-neutral-500 text-sm">
+                Btech
+              </label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend className=" font-medium text-neutral-500 text-sm">Highest Qualification</legend>
+          <div className="mt-2 space-y-2">
+            
+            <div className="flex items-center">
+              <input
+                type="radio"
+                id="postgrad"
+                name="qualification"
+                value="Post Grduation"
+                checked={formData.qualification === "Post Graduation"}
+                onChange={handleChange}
+                className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
+              />
+              <label htmlFor="bachelor" className="ml-3 block font-medium text-neutral-500 text-sm">
+                Sales Co-ordinator
+              </label>
+            </div>
+            <div className="flex items-center">
+              <input
+                type="radio"
+                id="grad"
+                name="qualification"
+                value="Graduation"
+                checked={formData.qualification === "Graduation"}
+                onChange={handleChange}
+                className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
+              />
+              <label htmlFor="masters" className="ml-3 block font-medium text-neutral-500 text-sm">
+              Relationship Officer
+              </label>
+            </div>
+            
+          </div>
+        </fieldset>
+
+        {/* Upload CV */}
+        <div>
+          <label htmlFor="cv" className="  font-medium text-neutral-500 text-sm">
+            Upload CV
+          </label>
+          <input
+            type="file"
+            id="cv"
+            name="cv"
+            onChange={handleFileChange}
+            className="mt-1 focus:outline-none file:focus:outline-none w-full text-sm file:bg-teal-500 file:border-3 file:border-teal-500 file:font-bold file:text-white file:p-2 text-gray-500"
+          />
+        </div>
+
+        {/* Submit Button */}
+        <div>
+          <button
+            type="submit"
+            className="inline-flex justify-center py-2 px-4 border border-transparent text-sm rounded-md text-white font-bold bg-cyan-500"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  );
+};
+
+export default CareerForm;
