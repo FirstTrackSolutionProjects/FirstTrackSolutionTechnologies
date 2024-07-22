@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import React from "react";
+import '../index.css'
+import AboutSlider from "../Components/AboutSlider";
 
 
 const About=()=>{
@@ -8,20 +10,68 @@ const About=()=>{
     }, []); 
     return(
         <div>
+            <div className=" w-full mx-auto">
+
+            <div className="z-0 absolute w-full h-96 flex items-center justify-center bg-black bg-opacity-60 text-white text-center p-4">
+                <h1 className="text-4xl font-bold">ABOUT US</h1>
+            </div>
+                <img src="images/about.jpg" alt="Placeholder" className="w-full h-96 object-cover "/>
+            </div>
+
             
-            <div className="my-5 text-center font-inter">
-                <img src="images/about1.webp" className="mx-auto w-60 h-60 rounded-tr-xl rounded-bl-xl object-cover"></img>
-                <div className="text-2xl md:text-3xl font-bold mt-8">Mr. Tejash Prakash</div>
-                <div className="text-xl md:text-2xl font-semibold text-red-500 mt-8">Founder | CEO</div>
-                <div className="text-lg md:text-xl text-balance my-8 text-neutral-500">As the founder of First Track Solution Technologies Private Limited, he is a seasoned business professional who inspires the brightest minds to explore emerging technologies.</div>
+           
+          
+            
+           <div className="md:my-2 font-inter md:p-8 bg-gradient-to-l from-slate-50 to-white md:flex items-center">
+           <img src="images/gif/gif2.gif" className=" bg-white w-fit md:w-80 h-64 md:mx-20 items-center mx-auto p-2 md:p-0"></img>
+            <div className="text-center">
+            <div className="text-2xl font-bold text-orange-500">Who We Are</div>
+            <div className="text-justify my-3 p-3">About First Track Solution is one of the leading training &  placement organisations since Oct 2011.In Oct 2022 it became registered as a First Track Solution Technologies Private Limited, it's a Software Development | Fintech |  E-commerce  | Training & Placement| Internet company</div>
+            <div className="text-justify my-3 p-3">First Track Solution Technologies is a leading software, e-commerce, and internet solutions provider. We specialize in delivering innovative and high-quality software products, tailored e-commerce platforms, and comprehensive internet services to meet the diverse needs of our clients. Our dedicated team of professionals is committed to excellence, ensuring that we stay ahead of industry trends and technology advancements</div>
+           </div>
+           </div>
+           
+           <div className=" p-5">
+                <div className="text-center font-inter text-3xl">Meet Our Team</div>
+                <div className='flex justify-center mt-2'>
+                <div className='w-1 h-1 rounded bg-orange-500 mx-1'></div>
+                <div className='w-1 h-1 rounded bg-orange-500 mx-1'></div>
+                <div className='w-1 h-1 rounded bg-orange-500 mx-1'></div>
+                <div className='w-32 h-1 rounded bg-orange-500 mx-1'></div>
+                
             </div>
-            <div className="my-5 text-center font-inter">
-                <img src="images/about2.webp" className="mx-auto w-60 h-60 rounded-tr-xl rounded-bl-xl object-cover"></img>
-                <div className="text-2xl md:text-3xl font-bold mt-8">Ms. Toral Barbhaya</div>
-                <div className="text-xl md:text-2xl font-semibold text-red-500 mt-8">Director</div>
-                <div className="text-lg md:text-xl text-balance my-8 text-neutral-500">As the director of the company, she spearheads business initiatives, infusing an innovative spirit, and ultimately ensures the delivery of the highest quality software solutions for clients.</div>
+            <AboutSlider/>
             </div>
-            {/*
+            
+       
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            {/*<div> 
+
             <div className="my-5 text-center font-inter mx-auto bg-neutral-300 p-5 md:px-10 md:py-14">
                 <div className="grid md:grid-cols-3">
                 <div className="p-6">

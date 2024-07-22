@@ -63,16 +63,19 @@ const Header = () => {
         <div className="hidden md:flex space-x-10 justify-evenly items-center">
         <Link to="" className='text-black hover:underline hover:decoration-orange-500'>HOME</Link>
             <Link  to="/career" className='text-black hover:underline hover:decoration-orange-500'>CAREER</Link>
+            
             <div className="relative" ref={servicesDropdownRef}>
             <Link onClick={toggleServicesDropdown} to="/services" className='text-black hover:underline hover:decoration-orange-500 flex items-center'>SERVICES<FaChevronDown className="ml-2" /></Link>
             {isServicesDropdownOpen && (
               <div className="absolute left-0 top-full mt-2 w-48 bg-white text-gray-800 shadow-lg rounded-lg py-2">
-                <Link to="" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Information Technology</Link>
-                <Link to="" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Financial Services</Link>
-                <Link to="" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Training & Development</Link>
-                <Link to="" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Recruitment<br/>Job Portal</Link>
+                <Link to="/info" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Information Technology</Link>
+                <Link to="/finance" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Financial Services</Link>
+                <Link to="/training" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Training & Development</Link>
+                <Link to="/recruit" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Recruitment<br/>Job Portal</Link>
+                <Link to="/ecom" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">E-Commerce</Link>
               </div>
             )}</div>
+
             <div className="relative " ref={joinUsDropdownRef}>
             <Link onClick={toggleJoinUsDropdown} to="/joinus" className='text-black hover:underline hover:decoration-orange-500 flex items-center'>JOIN US<FaChevronDown className="ml-2" /></Link>
             {isJoinUsDropdownOpen && (
@@ -81,6 +84,7 @@ const Header = () => {
               </div>
             )}
             </div>
+            
             <Link to="/contact" className='text-black hover:underline hover:decoration-orange-500'>CONTACT US</Link>
             <Link to="/about" className='text-black hover:underline hover:decoration-orange-500'>ABOUT</Link>
             <Link to="" onClick={openModal} className='text-black border-gray-700 border-2 p-2 hover:bg-orange-600 hover:text-white hover:border-orange-600'>Request Call</Link>
@@ -104,6 +108,7 @@ const Header = () => {
                 <Link to="" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Financial Service</Link>
                 <Link to="" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Training & Development</Link>
                 <Link to="" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Recruitment<br/>Job Portal</Link>
+                <Link to="" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">E-Commerce</Link>
               </div>
             )}
             </div>

@@ -12,6 +12,7 @@ export default {
         "lato": ['Lato', 'sans-serif'],
         "inter": ['Inter', 'sans-serif'],
     } 
+
     },
   },
   plugins: [

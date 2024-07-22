@@ -14,6 +14,7 @@ const CareerForm = () => {
     country: '',
     description: '',
     qualification: '',
+    course:'',
     cv: null
   });
 
@@ -207,7 +208,7 @@ const CareerForm = () => {
                 className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
               />
               <label htmlFor="bachelor" className="ml-3 block font-medium text-neutral-500 text-sm">
-              Post Graduation
+              Post Graduation/Master's
               </label>
             </div>
             <div className="flex items-center">
@@ -235,23 +236,23 @@ const CareerForm = () => {
                 className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
               />
               <label htmlFor="doctorate" className="ml-3 block font-medium text-neutral-500 text-sm">
-                Btech
+                BTech
               </label>
             </div>
           </div>
         </fieldset>
 
         <fieldset>
-          <legend className=" font-medium text-neutral-500 text-sm">Highest Qualification</legend>
+          <legend className=" font-medium text-neutral-500 text-sm">Course Applied</legend>
           <div className="mt-2 space-y-2">
             
             <div className="flex items-center">
               <input
                 type="radio"
-                id="postgrad"
-                name="qualification"
-                value="Post Grduation"
-                checked={formData.qualification === "Post Graduation"}
+                id="sales"
+                name="course"
+                value="Sales Co-ordinator"
+                checked={formData.course === "Sales Co-ordinator"}
                 onChange={handleChange}
                 className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
               />
@@ -262,15 +263,99 @@ const CareerForm = () => {
             <div className="flex items-center">
               <input
                 type="radio"
-                id="grad"
-                name="qualification"
-                value="Graduation"
-                checked={formData.qualification === "Graduation"}
+                id="relOff"
+                name="course"
+                value="Relationship Officer"
+                checked={formData.course === "Relationship Officer"}
                 onChange={handleChange}
                 className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
               />
               <label htmlFor="masters" className="ml-3 block font-medium text-neutral-500 text-sm">
               Relationship Officer
+              </label>
+            </div>
+            <div className="flex items-center">
+              <input
+                type="radio"
+                id="relManager"
+                name="course"
+                value="Relationship Manager"
+                checked={formData.course === "Relationship Manager"}
+                onChange={handleChange}
+                className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
+              />
+              <label htmlFor="masters" className="ml-3 block font-medium text-neutral-500 text-sm">
+              Relationship Manager
+              </label>
+            </div>
+            <div className="flex items-center">
+              <input
+                type="radio"
+                id="hre"
+                name="course"
+                value="Human Resource Executive"
+                checked={formData.course === "Human Resource Executive"}
+                onChange={handleChange}
+                className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
+              />
+              <label htmlFor="masters" className="ml-3 block font-medium text-neutral-500 text-sm">
+              Human Resource Executive (HRE)
+              </label>
+            </div>
+            <div className="flex items-center">
+              <input
+                type="radio"
+                id="hrIntern"
+                name="course"
+                value="HR Intern"
+                checked={formData.course === "HR Intern"}
+                onChange={handleChange}
+                className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
+              />
+              <label htmlFor="masters" className="ml-3 block font-medium text-neutral-500 text-sm">
+              HR Intern
+              </label>
+            </div>
+            <div className="flex items-center">
+              <input
+                type="radio"
+                id="itIntern"
+                name="course"
+                value="IT Intern"
+                checked={formData.course === "IT Intern"}
+                onChange={handleChange}
+                className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
+              />
+              <label htmlFor="masters" className="ml-3 block font-medium text-neutral-500 text-sm">
+              IT Intern
+              </label>
+            </div>
+            <div className="flex items-center">
+              <input
+                type="radio"
+                id="adminExe"
+                name="course"
+                value="Admin Executive"
+                checked={formData.course === "Admin Executive"}
+                onChange={handleChange}
+                className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
+              />
+              <label htmlFor="masters" className="ml-3 block font-medium text-neutral-500 text-sm">
+              Admin Executive
+              </label>
+            </div>
+            <div className="flex items-center">
+              <input
+                type="radio"
+                id="teleCaller"
+                name="course"
+                value="Tele Caller"
+                checked={formData.course === "Tele Caller"}
+                onChange={handleChange}
+                className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
+              />
+              <label htmlFor="masters" className="ml-3 block font-medium text-neutral-500 text-sm">
+              Tele Caller
               </label>
             </div>
             

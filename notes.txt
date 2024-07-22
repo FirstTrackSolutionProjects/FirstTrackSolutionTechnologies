@@ -8,7 +8,7 @@ trusted partner-zoho,phonepe,razorpay,paytm,indiafiling,aws,icici hdfc bank,host
 
 
 client-faircent(finance),nse academy(e-learning and dev) [tagline from photo]
-jupiterxpress, 7dxpress [logistics], Sahityasanskruti[ngo],
+jupiterxpress, 7dxpress(information technology) [logistics], Sahityasanskruti[ngo],
 fuddins(parent company-ecommerce) give web/app link
 
 
@@ -17,3 +17,8 @@ login-register
 biography oct 2011 firsttrack
 
 ecomm-cloud kitchen,grocery mart,logistics
+
+
+financial services-loan
+
+

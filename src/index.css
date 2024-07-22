@@ -6,4 +6,28 @@
     clip-path: ellipse(60% 100% at 50% 0%);
   }
 
+  /* App.css */
+@keyframes slideRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animated-div {
+  animation: slideRight 3s linear infinite;
+  background-color: #3490dc; /* Tailwind's blue-500 */
+  color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.container {
+  overflow: hidden;
+}
+
 

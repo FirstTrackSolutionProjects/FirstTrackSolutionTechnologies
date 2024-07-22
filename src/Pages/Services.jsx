@@ -2,6 +2,8 @@ import React from "react";
 import { useEffect } from "react";
 import { ArrowRightIcon } from "@heroicons/react/outline";
 import { Link } from "react-router-dom";
+import Card from "../Components/Card";
+import SliderService from "../Components/SliderService";
 
 
 
@@ -24,13 +26,14 @@ const Services=()=>{
                         <div className="md:mt-6 text-orange-600 font-bold md:text-lg">Best Leading Software Company<br/> <span>Software | E-commerce | Internet</span></div>
                         <div></div>
                         <div className="my-5 text-xl md:text-2xl font-semibold">Welcome to First Track Solution Technologies - Your Gateway to Digital Excellence</div>
-                        <div className="text-gray-600 my-3 text-sm md:text-base">At First Track Solution Technologies, we transcend the conventional role of a mere digital marketing agency; we emerge as your dedicated partners on the dynamic journey toward online success. 
-                            Recognizing the paramount importance of navigating the ever-evolving digital landscape, we take pride in presenting a team of seasoned experts poised to guide you through the intricacies of this fast-paced realm.</div>
+                        <div className="text-gray-600 my-3 text-sm md:text-base">At First Track Solution Technologies, we are dedicated to delivering top-notch solutions across various domains. Our expertise spans multiple sectors, including IT, Finance, Training & Development, Recruitment, Web Designing, Graphic Designing, Application Development, and Digital Marketing. We pride ourselves on being a one-stop destination for all your technology and business needs.</div>
                         <div className="text-gray-600 mt-6 text-sm md:text-base">More than just addressing your marketing requirements, our passionate and innovative professionals are committed to an elevated mission — propelling your brand to unprecedented heights. In addition to our prowess in digital marketing, we specialize in crafting sophisticated software solutions and creating bespoke websites. Our comprehensive approach extends to graphic design, encompassing UI and UX design, video editing, and photo editing. 
                             This holistic suite of services ensures that your online presence not only meets industry standards but exceeds them, offering your customers an unparalleled and visually engaging experience. This multifaceted expertise solidifies your brand as a leader in the digital space, making a lasting impression on your audience.</div>
                     </div>
                 </div>
+                <SliderService/>
 
+                
             
 
 

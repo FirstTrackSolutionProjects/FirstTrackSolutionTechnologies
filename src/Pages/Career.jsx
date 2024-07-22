@@ -8,7 +8,7 @@ const Career=()=>{
     }, []); 
     return(
         <div>
-            <div className=" w-full mx-auto">
+            <div className=" w-full mx-auto z-0">
 
             <div className="absolute w-full h-96 flex items-center justify-center bg-black bg-opacity-50 text-white text-center p-4">
                 <h1 className="text-4xl font-bold">CAREER</h1>
