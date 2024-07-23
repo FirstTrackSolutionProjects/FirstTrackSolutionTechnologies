@@ -11,12 +11,18 @@ import About from './Pages/About'
 import BlogsPage from './Pages/BlogPage'
 import PrivacyPolicy from './Pages/PrivacyPolicy'
 import WhatsAppChatPopup from './Components/WhatsAppChatPopup'
+import Infotech from './Pages/Infotech'
+import Finance from './Pages/Finance'
+import Training from './Pages/Training'
+import Recruitment from './Pages/Recruitment'
+import Header2 from './Components/Header2'
+
 
 function App() {
 
   return (
     <div>
-      <Header/>
+      <Header2/>
       <Routes>
         <Route path="/" element={<HomePage/>}></Route>
         <Route path="/career" element={<Career/>}></Route>
@@ -26,6 +32,10 @@ function App() {
         <Route path="/about" element={<About/>}></Route>
         <Route path="/blog" element={<BlogsPage/>}></Route>
         <Route path="/privacy" element={<PrivacyPolicy/>}></Route>
+        <Route path="/info" element={<Infotech/>}></Route>
+        <Route path="/finance" element={< Finance/>}></Route>
+        <Route path="/training" element={<Training/>}></Route>
+        <Route path="/recruit" element={<Recruitment/>}></Route>
       </Routes>
       
       <Footer/>
