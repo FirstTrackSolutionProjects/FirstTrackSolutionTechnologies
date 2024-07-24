@@ -16,13 +16,20 @@ import Finance from './Pages/Finance'
 import Training from './Pages/Training'
 import Recruitment from './Pages/Recruitment'
 import Header2 from './Components/Header2'
+import TermsOfUse from './Pages/TermsOfUse'
+import Ecom from './Pages/Ecom'
+import Dropdown from './Components/DropDown'
+import Login from './Components/Login'
+import Signup from './Components/Signup'
+import LoginPage from './Pages/LoginPage'
+import SignupPage from './Pages/SignupPage'
 
 
 function App() {
 
   return (
     <div>
-      <Header2/>
+      <Dropdown/>
       <Routes>
         <Route path="/" element={<HomePage/>}></Route>
         <Route path="/career" element={<Career/>}></Route>
@@ -36,6 +43,10 @@ function App() {
         <Route path="/finance" element={< Finance/>}></Route>
         <Route path="/training" element={<Training/>}></Route>
         <Route path="/recruit" element={<Recruitment/>}></Route>
+        <Route path="/terms" element={<TermsOfUse/>}></Route>
+        <Route path="/ecom" element={<Ecom/>}></Route>
+        <Route path="/login" element={<LoginPage/>}></Route>
+        <Route path="/signup" element={<SignupPage/>}></Route>
       </Routes>
       
       <Footer/>

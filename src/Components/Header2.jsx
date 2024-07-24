@@ -9,12 +9,13 @@ const Header2 = () => {
 
     const openModal = () => {
         setIsModalOpen(true);
-        setVisibleDropdown(false);
     };
 
     const closeModal = () => {
         setIsModalOpen(false);
     };
+
+   
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -33,7 +34,8 @@ const Header2 = () => {
   const handleClickOutside = (event) => {
     if (careerRef.current && !careerRef.current.contains(event.target) &&
         servicesRef.current && !servicesRef.current.contains(event.target) ) {
-      setVisibleDropdown(null);
+      setVisibleDropdown(false);
+      setIsModalOpen(true);
     }
   };
 

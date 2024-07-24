@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 
-const RequestCallModal = ({ closeModal }) => {
+const Modal = ({ closeModal }) => {
   const modalRef = useRef(null);
 
   const handleClickOutsideModal = (event) => {
     if (modalRef.current && !modalRef.current.contains(event.target)) {
-      // Do nothing when clicking outside the modal
+      // Prevent the event from closing the modal
       event.stopPropagation();
     }
   };
@@ -17,68 +17,64 @@ const RequestCallModal = ({ closeModal }) => {
     };
   }, []);
 
-
-    const [formData, setFormData] = useState({
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      streetAddress: '',
-      city: '',
-      state:'',
-      postalCode: '',
-      description: '',
-      qualification: '',
-      tenthDocument:null,
-      twelfthDocument:null,
-      graduationDocument:null,
-      postGraduationDocument:null,
-      pan:null,
-      aadhar:null,
-      passbook:null,
-      letter:null,
-      salary:null,
-      photo:null,
-      resume:null       
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    streetAddress: '',
+    city: '',
+    state:'',
+    postalCode: '',
+    description: '',
+    qualification: '',
+    tenthDocument:null,
+    twelfthDocument:null,
+    graduationDocument:null,
+    postGraduationDocument:null,
+    pan:null,
+    aadhar:null,
+    passbook:null,
+    letter:null,
+    salary:null,
+    photo:null,
+    resume:null       
+    });
+  
+    const handleChange = (e) => {
+      const { name, value } = e.target;
+      setFormData({
+        ...formData,
+        [name]: value
       });
-    
-      const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({
-          ...formData,
-          [name]: value
-        });
-      };
-    
-      const handleFileChange = (e) => {
-        setFormData({
-          ...formData,
-          cv: e.target.files[0]
-        });
-      };
-    
-      const handleSubmit = (e) => {
-        e.preventDefault();
-        // Handle form submission logic here
-        console.log(formData);
-      };
+    };
+  
+    const handleFileChange = (e) => {
+      setFormData({
+        ...formData,
+        cv: e.target.files[0]
+      });
+    };
+  
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      // Handle form submission logic here
+      console.log(formData);
+    };
 
-      
-    
-    return (
-      
-        <div ref={modalRef} className="fixed top-0 right-0 bottom-0 flex items-center justify-center font-inter z-50">
-          
-            <div className="bg-white w-72 max-h-screen p-4 shadow-lg rounded">
-            <div className="overflow-y-auto max-h-[90vh] scrollbar-hide">
-                <div className='flex items-center mt-3'>
-                
-                <button onClick={closeModal} className=" text-2xl text-gray-600 hover:text-gray-800">
-                    &times;
-                </button>
-                <h2 className="text-center text-sm ml-5">Please Let Us Know Your Preferred Time</h2></div>
-                
-                <form onSubmit={handleSubmit} className=" font-normal space-y-6">
+
+  return (
+    <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
+      <div ref={modalRef} className="bg-white p-6 rounded-lg shadow-lg w-96 relative">
+      <div className="overflow-y-auto max-h-[90vh] scrollbar-hide">
+        <button
+          onClick={closeModal}
+          className="absolute top-0 right-2 text-gray-500 hover:text-gray-700 text-3xl"
+        >
+          &times;
+        </button>
+        <h2 className="text-lg mb-4">Please let us know Your preferred time</h2>
+        <form onSubmit={handleSubmit} className=" font-normal space-y-6">
         {/* Name Fields */}
         <div className="md:flex md:space-x-4 mt-3">
           <div className="flex-1">
@@ -399,9 +395,9 @@ const RequestCallModal = ({ closeModal }) => {
         </div>
       </form>
       </div>
-            </div>
-        </div>
-    );
-}
+    </div>
+    </div>
+  );
+};
 
-export default RequestCallModal;
+export default Modal;

@@ -6,6 +6,8 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
+        'bg-login': "url('images/bg2.png')",
+        'bg-signup': "url('images/bg3.jpg')",
         
       },
       fontFamily: { 

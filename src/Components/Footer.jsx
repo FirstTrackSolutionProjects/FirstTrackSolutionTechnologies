@@ -104,7 +104,8 @@ const Footer =()=>{
                 <Link to='/' onClick={scrollToTop} className="">Home&nbsp; |&nbsp;</Link>
                 <Link to='/contact' onClick={scrollToTop} className="md:mx-1">Contact Us&nbsp;  |&nbsp;</Link>
                 <Link to='/about' onClick={scrollToTop} className="md:mx-1">About Us&nbsp;  |&nbsp;</Link>
-                <Link to='/privacy' onClick={scrollToTop} className="md:mx-1">Privacy Policy</Link>
+                <Link to='/privacy' onClick={scrollToTop} className="md:mx-1">Privacy Policy&nbsp;  |&nbsp;</Link>
+                <Link to='/terms' onClick={scrollToTop} className="md:mx-1">Terms Of Use</Link>
                 </div>
                 
             </div>

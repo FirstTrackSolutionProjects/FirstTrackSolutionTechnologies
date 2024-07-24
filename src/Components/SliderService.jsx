@@ -31,7 +31,7 @@ const SliderService = () => {
   };
 
   return (
-    <div className="relative w-full h-fit overflow-hidden">
+    <div className="relative w-full h-full overflow-hidden">
       <div
         className="flex transition-transform duration-700"
         style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -44,14 +44,14 @@ const SliderService = () => {
       </div>
       <button
         onClick={handlePrev}
-        className="absolute top-1/2 left-4 transform -translate-y-1/2  text-white p-2 rounded-full focus:outline-none"
+        className="absolute top-1/2 left-4 transform -translate-y-1/2  text-white md:p-2 rounded-full focus:outline-none"
       >
        {/* &#8592;*/}
        <ChevronLeftIcon className='h-8 w-6 text-white'/> 
       </button>
       <button
         onClick={handleNext}
-        className="absolute top-1/2 right-4 transform -translate-y-1/2  text-white p-2 rounded-full focus:outline-none"
+        className="absolute top-1/2 right-4 transform -translate-y-1/2  text-white md:p-2 rounded-full focus:outline-none"
       >
         <ChevronRightIcon className='h-8 w-6 text-white'/>
       </button>

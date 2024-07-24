@@ -3,7 +3,8 @@ financial services
 training and dev
 recruitment job portal
 
-trusted partner-zoho,phonepe,razorpay,paytm,indiafiling,aws,icici hdfc bank,hostinger,
+trusted partner-zoho,phonepe,razorpay,paytm,indiafiling,
+aws,icici hdfc bank,hostinger,
 
 
 
