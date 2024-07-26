@@ -21,7 +21,7 @@ const Signup = () => {
   };
 
   return (
-    <div className=" mx-auto p-5 border shadow-sm bg-white font-inter">
+    <div className=" mx-auto h-[420px] p-5 border shadow-sm bg-white font-inter">
       <h2 className="md:text-3xl text-center font-bold mb-5 bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-blue-500 to-sky-500">New User? Register Here!!</h2>
       <form onSubmit={handleSubmit}>
         <input

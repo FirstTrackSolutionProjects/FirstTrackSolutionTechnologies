@@ -26,8 +26,8 @@ const About=()=>{
            <img src="images/gif/gif2.gif" className=" bg-white w-fit md:w-80 h-64 md:mx-20 items-center mx-auto p-2 md:p-0"></img>
             <div className="text-center">
             <div className="text-2xl font-bold text-orange-500">Who We Are</div>
-            <div className="text-justify my-3 p-3">About First Track Solution is one of the leading training &  placement organisations since Oct 2011.In Oct 2022 it became registered as a First Track Solution Technologies Private Limited, it's a Software Development | Fintech |  E-commerce  | Training & Placement| Internet company</div>
-            <div className="text-justify my-3 p-3">First Track Solution Technologies is a leading software, e-commerce, and internet solutions provider. We specialize in delivering innovative and high-quality software products, tailored e-commerce platforms, and comprehensive internet services to meet the diverse needs of our clients. Our dedicated team of professionals is committed to excellence, ensuring that we stay ahead of industry trends and technology advancements</div>
+            <div className="text-justify my-1 p-3">About First Track Solution is one of the leading Training & Development organisations since Oct 2011.</div>
+            <div className="text-justify my-1 p-3">From Oct 2022, it became registered as an First Track Solution Technologies Private Limited, it's an Software Development | Fintech |  E-commerce  | Training & Development | Job Recruitment | Internet company.<br/>We specialize in delivering innovative and high-quality software development, tailored e-commerce platforms, and comprehensive internet services to meet the diverse needs for all. Our dedicated team of professionals is committed to excellence, ensuring that we stay ahead of industry trends and technology advancements.</div>
            </div>
            </div>
            

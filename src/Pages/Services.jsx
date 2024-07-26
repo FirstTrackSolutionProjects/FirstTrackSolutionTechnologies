@@ -111,7 +111,7 @@ const Services=()=>{
                 <div className="md:flex space-x-2 p-4 md:p-10">
                     <div className="md:w-[30%] h-40 md:h-48 bg-white container shadow-gray-700 shadow-lg md:shadow-2xl rounded-lg items-center"><img src="images/fuddins.webp" className="py-3 items-center justify-center object-cover"></img></div>
                     <div className="md:w-[70%] md:px-5 py-3">
-                        <div className="text-gray-600">Fuddins Mart is the daily essentials grocery mart whereas customer can buy their daily products physical from Fuddins Mart Store or may buy online through our Fuddins App. Products — Grocery, Fresh Vegetables,Fruits, Diary, Baby care products, and many more</div>
+                        <div className="text-gray-600">Fuddins Mart is the daily essentials grocery mart whereas customer can buy their daily products physical from Fuddins Mart Store or may buy online through our Fuddins App. Products — Grocery, Fresh Vegetables, Fruits, Diary, Baby care products, and many more</div>
                         <a href="https://fuddins.com/" target="_blank" rel="noopener noreferrer" ><div className="flex font-bold container bg-green-500 w-40 p-2 text-center mt-6 items-center justify-center rounded-sm bg-opacity-90 transition-transform transform hover:scale-125"><ArrowRightIcon className="w-4 h-6 text-3xl text-white mr-2" />
                         <span className="text-white">Explore Now</span></div></a>
                     </div>
@@ -119,7 +119,7 @@ const Services=()=>{
                 <div className="md:flex space-x-2 px-4 md:px-10">
                     <div className="md:w-[30%] h-40 md:h-48 bg-white container shadow-gray-700 shadow-lg md:shadow-2xl rounded-lg items-center"><img src="images/fuddins2.jpg" className=" items-center justify-center h-32 object-cover my-6 mx-auto"></img></div>
                     <div className="md:w-[70%] md:px-5 py-3">
-                        <div className="text-gray-600">FUDDINS is the online home delivery services app, with the categories of food, groceries, vegetables, fruits, diary, beverages, snacks, deserts, house hold item, beauty & cosmetics, baby care products, tobacco, garments, pharma, footwear, electronics & electrical products, sports item, pc & laptop & many more.</div>
+                        <div className="text-gray-600">FUDDINS is the online home delivery services app, with the categories of food, groceries, vegetables, fruits, diary, beverages, snacks, deserts, house hold item, beauty & cosmetics, baby care products, pharma, & many more.</div>
                         <a href="https://fuddins.com/" target="_blank" rel="noopener noreferrer" ><div className="flex font-bold container bg-green-500 w-40 p-2 text-center mt-6 items-center justify-center rounded-sm bg-opacity-90 transition-transform transform hover:scale-125"><ArrowRightIcon className="w-4 h-6 text-3xl text-white mr-2" />
                         <span className="text-white">Explore Now</span></div></a>
                     </div>

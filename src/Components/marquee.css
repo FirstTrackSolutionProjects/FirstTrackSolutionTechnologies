@@ -1,0 +1,17 @@
+/* marquee.css */
+@keyframes marquee {
+    0% {
+      transform: translateX(20%);
+    }
+    100% {
+      transform: translateX(-60%);
+    }
+  }
+  
+  
+  
+  .marquee-content {
+    display: flex;
+    animation: marquee 4s linear infinite;
+  }
+  

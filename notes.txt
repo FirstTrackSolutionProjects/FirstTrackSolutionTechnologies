@@ -22,4 +22,20 @@ ecomm-cloud kitchen,grocery mart,logistics
 
 financial services-loan
 
+client
+corporate relationship manager [crm]
+--------------
+firsttracksolution@gmail
 
+title- nse awareness program [fts logo]
+training & development...5/8/24
+
+aadhar
+mobile
+dob[calendar]
+gender
+category[st/sc,obc,gen]
+qualification[text]
+add
+
+18605005555--axis

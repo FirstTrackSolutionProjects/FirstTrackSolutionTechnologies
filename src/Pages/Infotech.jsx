@@ -1,6 +1,5 @@
 import React, {useEffect}from "react";
-import { ArrowRightIcon } from "@heroicons/react/outline";
-import ClientSlider from "../Components/ClientSlider";
+import ImageMarquee from "../Components/ImageMarquee";
 
 
 const Infotech=()=>{
@@ -15,7 +14,7 @@ const Infotech=()=>{
     }, []); 
     return(
         <div>
-            <div className="md:w-2/3 h-44 md:h-60 mx-auto mt-10">
+            <div className=" md:w-2/3 h-44 md:h-60 mx-auto mt-10">
         <img 
           src="images/serv3.jpg" 
           alt="Full Width Image" 
@@ -42,10 +41,12 @@ const Infotech=()=>{
             <img src="images/gif/gif4.gif" alt="" className="w-full mx-auto items-center justify-center"></img>
         </div>
         </div>
+        
         <div className="bg-neutral-100 p-2 h-fit">
         <div className="mt-8 text-2xl text-center text-orange-600 font-semibold">Our Clients</div>
-        <ClientSlider images={imageUrls}/>
-        <div>
+        
+        <div className="my-3">
+            <ImageMarquee/>
         
         </div>
         </div>

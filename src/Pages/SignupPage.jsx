@@ -9,7 +9,7 @@ const SignupPage =()=>{
             <Signup/>
             </div>
             <div className="md:w-1/2 items-center justify-center my-auto ">
-            <img src="images/gif/gif8.gif" className="md:h-[400px]"></img>
+            <img src="images/gif/gif8.gif" className="md:h-[420px]"></img>
             </div>
             </div>
         </div>

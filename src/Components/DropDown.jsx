@@ -70,7 +70,6 @@ const DropDown = () => {
                 <Link to="/finance" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Financial Services</Link>
                 <Link to="/training" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Training & Development</Link>
                 <Link to="/recruit" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Recruitment<br/>Job Portal</Link>
-                <Link to="/ecom" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">E-Commerce</Link>
             
             </div>
         )}
@@ -147,7 +146,6 @@ const DropDown = () => {
                 <Link to="/finance" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Financial Services</Link>
                 <Link to="/training" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Training & Development</Link>
                 <Link to="/recruit" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Recruitment<br/>Job Portal</Link>
-                <Link to="/ecom" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">E-Commerce</Link>
             
             </div>
         )}

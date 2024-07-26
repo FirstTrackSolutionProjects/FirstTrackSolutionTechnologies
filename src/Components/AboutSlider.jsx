@@ -18,17 +18,19 @@ const AboutSlider = () => {
     <div className="w-full max-w-xl mx-auto mt-10">
       <Slider {...settings}>
       <div className="text-center font-inter">
-                <img src="images/about1.webp" className="mx-auto w-60 h-60 border border-black rounded-full object-cover"></img>
+                <img src="images/sir.png" className="mx-auto w-60 h-60 border border-black  rounded-full object-contain"></img>
                 <div className="text-2xl md:text-3xl font-bold mt-8">Mr. Tejash Prakash</div>
                 <div className="text-xl md:text-2xl font-semibold text-red-500 mt-8">Founder | CEO</div>
-                <div className="text-lg md:text-xl text-balance my-8 text-neutral-500">As the founder of First Track Solution Technologies Private Limited, he is a seasoned business professional who inspires the brightest minds to explore emerging technologies.</div>
-            </div>
+                <div className="text-lg md:text-xl text-balance my-8 text-neutral-500">He is the founder of First Track Solution Technologies Private Limited and well established business person. He evokes the brightest minds to be told rising technologies.</div></div>
 
             <div className="text-center font-inter">
                 <img src="images/about2.webp" className="mx-auto w-60 h-60 border border-black rounded-full object-cover"></img>
                 <div className="text-2xl md:text-3xl font-bold mt-8">Ms. Toral Barbhaya</div>
-                <div className="text-xl md:text-2xl font-semibold text-red-500 mt-8">Director</div>
-                <div className="text-lg md:text-xl text-balance my-8 text-neutral-500">As the director of the company, she spearheads business initiatives, infusing an innovative spirit, and ultimately ensures the delivery of the highest quality software solutions for clients.</div>
+                <div className="text-xl md:text-2xl font-semibold text-red-500 mt-8">Director | COO</div>
+                <div className="text-lg md:text-xl text-balance my-8 text-neutral-500">She is the director of the company. She drives the business initiatives, 
+transportation the spirit of innovation 
+and eventually guaranteeing the most 
+effective quality of package solutions for patrons..</div>
             </div>
             {/*
             <div className="text-center font-inter">
