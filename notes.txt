@@ -3,7 +3,8 @@ financial services
 training and dev
 recruitment job portal
 
-trusted partner-zoho,phonepe,razorpay,paytm,indiafiling,aws,icici hdfc bank,hostinger,
+trusted partner-zoho,phonepe,razorpay,paytm,indiafiling,
+aws,icici hdfc bank,hostinger,
 
 
 
@@ -21,4 +22,20 @@ ecomm-cloud kitchen,grocery mart,logistics
 
 financial services-loan
 
+client
+corporate relationship manager [crm]
+--------------
+firsttracksolution@gmail
 
+title- nse awareness program [fts logo]
+training & development...5/8/24
+
+aadhar
+mobile
+dob[calendar]
+gender
+category[st/sc,obc,gen]
+qualification[text]
+add
+
+18605005555--axis

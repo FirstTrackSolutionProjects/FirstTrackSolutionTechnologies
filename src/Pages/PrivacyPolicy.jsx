@@ -7,7 +7,7 @@ const PrivacyPolicy = () => {
         document.title = "Privacy - First Track Solution Technologies";
     }, []); 
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
+    <div className="min-h-screen bg-gray-100 p-6 font-inter">
       <div className="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-md">
         <h1 className="text-3xl font-bold mb-6">Privacy Policy</h1>
         <p className="mb-4"><span className='font-semibold'>Email: </span>info@firsttracksolution.tech</p>

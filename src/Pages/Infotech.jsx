@@ -1,9 +1,20 @@
-import React from "react";
+import React, {useEffect}from "react";
+import ImageMarquee from "../Components/ImageMarquee";
+
 
 const Infotech=()=>{
+    const imageUrls = [
+        'images/partners/jupiter.jpg',
+        'images/partners/7d.jpg',
+        'images/partners/fuddin.jpg',
+        'images/partners/fuddin2.jpg',
+      ];
+    useEffect(() => {
+        document.title = "Information Technology - First Track Solution Technologies";
+    }, []); 
     return(
         <div>
-            <div className="md:w-2/3 h-44 md:h-60 mx-auto mt-10">
+            <div className=" md:w-2/3 h-44 md:h-60 mx-auto mt-10">
         <img 
           src="images/serv3.jpg" 
           alt="Full Width Image" 
@@ -30,12 +41,16 @@ const Infotech=()=>{
             <img src="images/gif/gif4.gif" alt="" className="w-full mx-auto items-center justify-center"></img>
         </div>
         </div>
-        <div className="my-3 text-justify"><span  className="text-orange-600 font-semibold">Our Trusted Clients</span>
-        <br/><span className="text-lg">Jupiter Xpress</span>
-        <br/><span className="text-lg">7DXpress</span></div>
+        
+        <div className="bg-neutral-100 p-2 h-fit">
+        <div className="mt-8 text-2xl text-center text-orange-600 font-semibold">Our Clients</div>
+        
+        <div className="my-3">
+            <ImageMarquee/>
         
         </div>
-
+        </div>
+        </div>
         </div>
     )
 }

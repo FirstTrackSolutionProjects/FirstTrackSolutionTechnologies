@@ -1,8 +1,8 @@
 import React,{useEffect} from "react";
 
-const Finance=()=>{
+const Ecom =()=>{
     useEffect(() => {
-        document.title = "FinTech - First Track Solution Technologies";
+        document.title = "Ecomerce - First Track Solution Technologies";
     }, []); 
     return(
         <div>
@@ -12,4 +12,4 @@ const Finance=()=>{
     )
 }
 
-export default Finance;
+export default Ecom;

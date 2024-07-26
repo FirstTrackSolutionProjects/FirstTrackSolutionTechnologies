@@ -1,6 +1,9 @@
 import React,{useState, useEffect} from "react";
 
 const Training=()=>{
+  useEffect(() => {
+    document.title = "Training & Development - First Track Solution Technologies";
+}, []); 
     const [animate, setAnimate] = useState(false);
 
     useEffect(() => {

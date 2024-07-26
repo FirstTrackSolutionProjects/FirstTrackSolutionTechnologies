@@ -35,7 +35,7 @@ const BlogPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
+    <div className="min-h-screen bg-gray-100 p-6 font-inter">
       <h1 className="text-3xl font-bold mb-6">Blogs</h1>
       {blogs.map(blog => (
         <BlogPost key={blog.id} blog={blog} addComment={addComment} />

@@ -358,7 +358,37 @@ const CareerForm = () => {
               Tele Caller
               </label>
             </div>
+
+            <div className="flex items-center">
+              <input
+                type="radio"
+                id="clientRM"
+                name="course"
+                value="Client Relationship Manager"
+                checked={formData.course === "Client Relationship Manager"}
+                onChange={handleChange}
+                className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
+              />
+              <label htmlFor="masters" className="ml-3 block font-medium text-neutral-500 text-sm">
+              Client Relationship Manager [CRM]
+              </label>
+            </div>
             
+            <div className="flex items-center">
+              <input
+                type="radio"
+                id="corporateRM"
+                name="course"
+                value="Corporate Relationship Manager"
+                checked={formData.course === "Corporate Relationship Manager"}
+                onChange={handleChange}
+                className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
+              />
+              <label htmlFor="masters" className="ml-3 block font-medium text-neutral-500 text-sm">
+              Corporate Relationship Manager [CRM]
+              </label>
+            </div>
+
           </div>
         </fieldset>
 
