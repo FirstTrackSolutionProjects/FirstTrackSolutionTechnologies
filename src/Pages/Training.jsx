@@ -14,16 +14,16 @@ const Training=()=>{
     return (
     <div className=" mx-auto">
       {/*<div className={`w-2/3 h-60 mx-auto mt-10 transition-transform duration-1000 ${animate ? 'translate-y-10' : '-translate-y-full'}`}>*/}
-      <div className="md:w-2/3 md:h-60 h-44 mx-auto mt-10">
+      <div className="z-20 md:w-2/3 md:h-60 h-44 mx-auto mt-10">
         <img 
           src="images/serv3.jpg" 
           alt="Full Width Image" 
-          className="w-full h-full object-cover mx-auto"
+          className="z-20 w-full h-full object-cover mx-auto"
         />
       </div>
 
         <div className="md:right-0">
-        <div className="absolute left-10 md:left-auto md:right-80 top-32 md:top-64 md:w-1/2 h-32 md:h-48 flex items-center justify-center bg-black bg-opacity-80 text-white text-center">
+        <div className="z-10 absolute left-10 md:left-auto md:right-80 top-32 md:top-64 md:w-1/2 h-32 md:h-48 flex items-center justify-center bg-black bg-opacity-80 text-white text-center">
             <h1 className="text-xl md:text-4xl font-bold text-center">Training & Development</h1>
         </div>
         </div>

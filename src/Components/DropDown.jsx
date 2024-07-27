@@ -109,7 +109,7 @@ const DropDown = () => {
         </div>
     </header>
     {isOpen && (
-      <div className="z-30 md:hidden items-center flex flex-col space-y-2 mt-2 mb-2">
+      <div className="z-50 bg-white md:hidden items-center flex flex-col space-y-2 mt-2 mb-2">
       <Link to="" className='text-black hover:underline hover:decoration-orange-500'>HOME</Link>
       
 
