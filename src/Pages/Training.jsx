@@ -13,22 +13,14 @@ const Training=()=>{
   
     return (
     <div className=" mx-auto">
-      {/*<div className={`w-2/3 h-60 mx-auto mt-10 transition-transform duration-1000 ${animate ? 'translate-y-10' : '-translate-y-full'}`}>*/}
-      <div className="z-20 md:w-2/3 md:h-60 h-44 mx-auto mt-10">
-        <img 
-          src="images/serv3.jpg" 
-          alt="Full Width Image" 
-          className="z-20 w-full h-full object-cover mx-auto"
-        />
-      </div>
+      <div className=" w-full md:w-2/3 mx-auto z-0 font-inter my-2">
+                <div className="absolute w-full md:w-2/3 h-60 md:h-96 flex items-center justify-center bg-black bg-opacity-50 text-white text-center p-4">
+                    <h1 className="text-4xl font-bold">Training & Development</h1>
+                </div>
+                    <img src="images/serv3.jpg" alt="Placeholder" className="w-full h-60 md:h-96 object-cover "/>
+            </div>
 
-        <div className="md:right-0">
-        <div className="z-10 absolute left-10 md:left-auto md:right-80 top-32 md:top-64 md:w-1/2 h-32 md:h-48 flex items-center justify-center bg-black bg-opacity-80 text-white text-center">
-            <h1 className="text-xl md:text-4xl font-bold text-center">Training & Development</h1>
-        </div>
-        </div>
-
-        <div className="bg-neutral-100 mx-auto md:mt-32 p-6 md:p-14 font-inter">
+        <div className="bg-neutral-100 mx-auto p-6  font-inter">
         <div className="text-justify" >First Track Solution on behalf of NSE Academy Ltd. Is offering on-demand complimentary Financial Awareness Programs for various working professionals, associated members, volunteers and students, etc. </div>
         <div className="text-orange-600 font-semibold mt-3">About NSE Academy Limited -</div>
         <div className="md:flex">

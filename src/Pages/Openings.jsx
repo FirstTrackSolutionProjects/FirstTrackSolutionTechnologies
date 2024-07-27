@@ -26,10 +26,10 @@ const Openings=()=>{
         console.log('Search Jobs:', formData);
       };
     return(
-        <div className="relative h-screen bg-cover bg-center" style={{ backgroundImage: 'url(images/serv3.jpg)' }}>
-      <div className="absolute inset-0 bg-black opacity-50"></div>
+        <div className="relative h-screen bg-cover bg-center" style={{ backgroundImage: 'url(images/office.jpg)' }}>
+      <div className="absolute inset-0 bg-black opacity-60"></div>
       <div className="relative z-10 flex items-center justify-end h-full">
-        <form onSubmit={handleSubmit} className="bg-white p-8 rounded shadow-md w-full max-w-lg m-5">
+        <form onSubmit={handleSubmit} className="bg-black bg-opacity-20 p-8 rounded shadow-md w-full max-w-lg m-5">
           <h2 className="text-2xl font-bold mb-6 text-center">Find a Job</h2>
           <div className="mb-4">
             <label className="block text-gray-700 mb-2">Keyword</label>
