@@ -46,6 +46,7 @@ function App() {
         <Route path="/ecom" element={<Ecom/>}></Route>
         <Route path="/login" element={<LoginPage/>}></Route>
         <Route path="/signup" element={<SignupPage/>}></Route>
+      
       </Routes>
       
       <Footer/>

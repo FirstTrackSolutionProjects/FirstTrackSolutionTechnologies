@@ -65,7 +65,7 @@ const DropDown = () => {
             SERVICES
           </div></Link>
         {isServicesDropdownOpen && (
-            <div className="absolute bg-white text-gray-800 shadow-md rounded-md mt-2 w-48">
+            <div className="absolute bg-gray-800 text-white  shadow-md rounded-md mt-2 w-48">
                 <Link to="/info" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Information Technology</Link>
                 <Link to="/finance" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Financial Services</Link>
                 <Link to="/training" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Training & Development</Link>
@@ -81,7 +81,7 @@ const DropDown = () => {
           </div></Link>
         {isCareerDropdownOpen && (
             
-          <div className="absolute bg-white text-gray-800 shadow-md rounded-md mt-2 w-48">
+          <div className="absolute bg-gray-800 text-white  shadow-md rounded-md mt-2 w-48">
             <Link to="/openings" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Current Openings</Link>
             <button
               onClick={() => {
@@ -119,7 +119,7 @@ const DropDown = () => {
           </div></Link>
         {isCareerDropdownOpen && (
             
-          <div className="absolute bg-white text-gray-800 shadow-md rounded-md mt-2 w-48">
+          <div className="absolute bg-gray-800 text-white shadow-md rounded-md mt-2 w-48">
             <Link to="/openings" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Current Openings</Link>
             <button
               onClick={() => {
@@ -141,7 +141,7 @@ const DropDown = () => {
             SERVICES
           </div></Link>
         {isServicesDropdownOpen && (
-            <div className="absolute bg-white text-gray-800 shadow-md rounded-md mt-2 w-48">
+            <div className="absolute bg-gray-800 text-white shadow-md rounded-md mt-2 w-48">
                 <Link to="/info" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Information Technology</Link>
                 <Link to="/finance" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Financial Services</Link>
                 <Link to="/training" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Training & Development</Link>
