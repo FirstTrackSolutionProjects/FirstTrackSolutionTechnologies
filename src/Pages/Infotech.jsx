@@ -14,21 +14,14 @@ const Infotech=()=>{
     }, []); 
     return(
         <div>
-            <div className=" md:w-2/3 h-44 md:h-60 mx-auto mt-10">
-        <img 
-          src="images/serv3.jpg" 
-          alt="Full Width Image" 
-          className="w-full h-full object-cover mx-auto"
-        />
-      </div>
+            <div className=" w-full md:w-2/3 mx-auto z-0 font-inter my-2">
+                <div className="absolute w-full md:w-2/3 h-60 md:h-96 flex items-center justify-center bg-black bg-opacity-50 text-white text-center p-4">
+                    <h1 className="text-4xl font-bold">Information & Technology</h1>
+                </div>
+                    <img src="images/serv1.jpg" alt="Placeholder" className="w-full h-60 md:h-96 object-cover "/>
+            </div>
 
-        <div className="md:right-0">
-        <div className="z-0 absolute left-10 md:left-auto md:right-80 top-32 md:top-64 md:w-1/2 h-32 md:h-48 flex items-center justify-center bg-black bg-opacity-80 text-white text-center">
-            <h1 className="text-xl md:text-4xl font-bold text-center">Information Technology</h1>
-        </div>
-        </div>
-
-        <div className=" mx-auto md:mt-32 p-6 md:p-14 font-inter">
+        <div className=" mx-auto  p-6  font-inter">
         <div className="text-justify" >First Track Solution Technologies offers a comprehensive suite of IT services designed to support your business operations, enhance efficiency, and ensure security. Our IT services encompass a wide range of solutions tailored to meet the specific needs of businesses across various industries. </div>
         <div className="text-orange-600 font-semibold mt-3">Some Key Features-</div>
         <div className="md:flex">
