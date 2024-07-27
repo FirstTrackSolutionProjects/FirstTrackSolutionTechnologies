@@ -5,6 +5,16 @@ export default {
   ],
   theme: {
     extend: {
+      colors:{
+        darkBeige:'#d7b4ae',
+        darkPurple:'#9d99bc',
+        darkYellow:'#fff27a',
+      },
+      borderColor: theme => ({
+        'flap1': '#d7b4ae',
+        'flap2':'#9d99bc',
+        'flap4':'#fff27a', // Define a custom border color
+      }),
       keyframes: {
         marquee: {
           '0%': { transform: 'translateX(0%)' },
