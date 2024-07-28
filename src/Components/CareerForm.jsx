@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { countries } from 'countries-list';
-
+import {v4 as uuidv4} from 'uuid'
 const CareerForm = () => {
   const countryList = Object.values(countries);
   const [formData, setFormData] = useState({
@@ -33,10 +33,36 @@ const CareerForm = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log(formData);
+    const cvUUID = uuidv4();
+    const reqUUID = uuidv4();
+    const cvKey = `careerForm/${reqUUID}/${cvUUID}`
+    const response = await fetch('/.netlify/functions/getPutSignedUrl',{
+      method : 'POST',
+      headers : {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body : JSON.stringify({key:cvKey, filetype: formData.cv.type })
+    })
+    const responseBody = await response.json()
+    const uploadURL = responseBody.uploadURL;
+    await fetch(uploadURL, {
+      method: "PUT",
+      headers: {
+        'Content-Type': formData.cv.type
+      },
+      body: formData.cv,
+    }).catch(err => {alert(err); return});
+    await fetch("/.netlify/functions/careerMail",{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({formData, cvKey}),
+    }).then(response => response.json()).then(result => alert(result.message))
   };
 
   return (
