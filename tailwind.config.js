@@ -9,6 +9,7 @@ export default {
         darkBeige:'#d7b4ae',
         darkPurple:'#9d99bc',
         darkYellow:'#fff27a',
+        whatsapp:'#25D366'
       },
       borderColor: theme => ({
         'flap1': '#d7b4ae',
@@ -32,6 +33,7 @@ export default {
       fontFamily: { 
         "lato": ['Lato', 'sans-serif'],
         "inter": ['Inter', 'sans-serif'],
+        "playfair":['Playfair Display', 'serif'],
     } 
 
     },

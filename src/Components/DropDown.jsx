@@ -56,8 +56,9 @@ const DropDown = () => {
 
   return (
     <div>
-    <header className="bg-white font-inter shadow-lg w-full font-semibold text-black p-3 flex z-10 justify-between">
-        <Link to="/" ><img src="images/logomain2.JPG" alt="logo" className='w-8 h-8 rounded-full object-cover md:w-12 md:h-12'></img></Link>
+    <header className="bg-neutral-200 font-inter shadow-lg w-full font-semibold text-black py-2 px-3 flex z-10 justify-between items-center">
+    <div className='flex font-playfair items-center text-xs md:text-base  text-gray-800'><Link to="/" ><img src="images/logomain2.JPG" alt="logo" className='w-8 h-8 rounded-full object-cover md:w-12 md:h-12 mr-4'></img></Link>
+        FIRST TRACK SOLUTION TECHNOLOGIES</div>
         <nav className="hidden md:flex justify-evenly space-x-10 items-center font-inter mr-8">
         <Link to="" className='text-black hover:underline hover:decoration-orange-500'>HOME</Link>
       <div className="relative z-20" ref={servicesDropdownRef} onMouseEnter={handleServicesMouseEnter}>
@@ -65,9 +66,9 @@ const DropDown = () => {
             SERVICES
           </div></Link>
         {isServicesDropdownOpen && (
-            <div className="absolute bg-white text-gray-800 shadow-md rounded-md mt-2 w-48">
+            <div className="absolute bg-gray-800 text-white  shadow-md rounded-md mt-2 w-48">
                 <Link to="/info" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Information Technology</Link>
-                <Link to="/finance" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Financial Services</Link>
+                {/*<Link to="/finance" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Financial Services</Link>*/}
                 <Link to="/training" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Training & Development</Link>
                 <Link to="/recruit" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Recruitment<br/>Job Portal</Link>
             
@@ -81,9 +82,10 @@ const DropDown = () => {
           </div></Link>
         {isCareerDropdownOpen && (
             
-          <div className="absolute bg-white text-gray-800 shadow-md rounded-md mt-2 w-48">
+          <div className="absolute bg-gray-800 text-white  shadow-md rounded-md mt-2 w-48">
             <Link to="/openings" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Current Openings</Link>
-            <button
+            <Link to="/joinus" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Join Us</Link>
+            {/*<button
               onClick={() => {
                 handleModalToggle();
                 setIsCareerDropdownOpen(false);
@@ -91,7 +93,7 @@ const DropDown = () => {
               className="block px-4 py-2 hover:bg-orange-600 hover:text-white w-full text-sm text-left"
             >
               Join Us
-            </button>
+            </button> */}
           </div>
         )}
         
@@ -109,8 +111,8 @@ const DropDown = () => {
         </div>
     </header>
     {isOpen && (
-      <div className="z-50 bg-white md:hidden items-center flex flex-col space-y-2 mt-2 mb-2">
-      <Link to="" className='text-black hover:underline hover:decoration-orange-500'>HOME</Link>
+      <div className="z-50 bg-white shadow-lg md:hidden items-center flex flex-col space-y-2 mb-2">
+      <Link to="" className='text-black text-center  hover:underline hover:decoration-orange-500'>HOME</Link>
       
 
       <div className="relative z-20" ref={careerDropdownRef} onMouseEnter={handleCareerMouseEnter}>
@@ -119,9 +121,10 @@ const DropDown = () => {
           </div></Link>
         {isCareerDropdownOpen && (
             
-          <div className="absolute bg-white text-gray-800 shadow-md rounded-md mt-2 w-48">
+          <div className="absolute bg-gray-800 text-white shadow-md rounded-md mt-2 w-48">
             <Link to="/openings" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Current Openings</Link>
-            <button
+            <Link to="/joinus" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Join Us</Link>
+            {/*<button
               onClick={() => {
                 handleModalToggle();
                 setIsCareerDropdownOpen(false);
@@ -129,7 +132,7 @@ const DropDown = () => {
               className="block px-4 py-2 hover:bg-orange-600 hover:text-white w-full text-sm text-left"
             >
               Join Us
-            </button>
+            </button>*/}
           </div>
         )}
         
@@ -141,9 +144,9 @@ const DropDown = () => {
             SERVICES
           </div></Link>
         {isServicesDropdownOpen && (
-            <div className="absolute bg-white text-gray-800 shadow-md rounded-md mt-2 w-48">
+            <div className="absolute bg-gray-800 text-white shadow-md rounded-md mt-2 w-48">
                 <Link to="/info" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Information Technology</Link>
-                <Link to="/finance" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Financial Services</Link>
+                {/*<Link to="/finance" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Financial Services</Link>*/}
                 <Link to="/training" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Training & Development</Link>
                 <Link to="/recruit" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Recruitment<br/>Job Portal</Link>
             

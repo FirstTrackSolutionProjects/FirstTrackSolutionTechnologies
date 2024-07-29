@@ -36,7 +36,7 @@ const Infotech=()=>{
         </div>
         
         <div className="bg-neutral-100 p-2 h-fit">
-        <div className="mt-8 text-2xl text-center text-orange-600 font-semibold">Our Clients</div>
+        <div className="mt-8 text-3xl text-center text-orange-600 font-semibold">Our Distinguished Patrons</div>
         
         <div className="my-3">
             <ImageMarquee/>

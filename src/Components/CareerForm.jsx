@@ -72,7 +72,7 @@ const CareerForm = () => {
         <div className="md:flex md:space-x-4">
           <div className="flex-1">
             <label htmlFor="firstName" className="  text-neutral-500 text-sm">
-              First Name
+              First Name <span className='text-red-500'>*</span>
             </label>
             <input
               type="text"
@@ -87,7 +87,7 @@ const CareerForm = () => {
           </div>
           <div className="flex-1">
             <label htmlFor="lastName" className=" text-neutral-500 text-sm">
-              Last Name
+              Last Name <span className='text-red-500'>*</span>
             </label>
             <input
               type="text"
@@ -106,7 +106,7 @@ const CareerForm = () => {
         <div className="md:flex md:space-x-4">
           <div className="flex-1">
             <label htmlFor="email" className=" text-neutral-500 text-sm">
-              Email
+              Email <span className='text-red-500'>*</span>
             </label>
             <input
               type="email"
@@ -121,7 +121,7 @@ const CareerForm = () => {
           </div>
           <div className="flex-1">
             <label htmlFor="phone" className=" text-neutral-500 text-sm">
-              Phone
+              Phone <span className='text-red-500'>*</span>
             </label>
             <input
               type="tel"
@@ -139,7 +139,7 @@ const CareerForm = () => {
         <div className="md:flex md:space-x-4">
           <div className="flex-1">
             <label htmlFor="streetAddress" className=" text-neutral-500 text-sm">
-              Street Address
+              Street Address <span className='text-red-500'>*</span>
             </label>
             <input
               type="text"
@@ -154,7 +154,7 @@ const CareerForm = () => {
           </div>
           <div className="flex-1">
             <label htmlFor="city" className=" text-neutral-500 text-sm">
-              City
+              City <span className='text-red-500'>*</span>
             </label>
             <input
               type="text"
@@ -169,7 +169,7 @@ const CareerForm = () => {
           </div>
           <div className="flex-1">
             <label htmlFor="postalCode" className=" text-neutral-500 text-sm">
-              Postal Code
+              Postal Code <span className='text-red-500'>*</span>
             </label>
             <input
               type="text"
@@ -184,7 +184,7 @@ const CareerForm = () => {
           </div>
           <div className="flex-1">
             <label htmlFor="state" className=" text-neutral-500 text-sm">
-              Country
+              Country <span className='text-red-500'>*</span>
             </label>
             <select
               id="country"
@@ -220,7 +220,7 @@ const CareerForm = () => {
 
         {/* Highest Qualification */}
         <fieldset>
-          <legend className="text-sm font-medium text-neutral-500">Highest Qualification</legend>
+          <legend className="text-sm font-medium text-neutral-500">Highest Qualification <span className='text-red-500'>*</span></legend>
           <div className="mt-2 space-y-2">
             
             <div className="flex items-center">
@@ -269,7 +269,7 @@ const CareerForm = () => {
         </fieldset>
 
         <fieldset>
-          <legend className=" font-medium text-neutral-500 text-sm">Course Applied</legend>
+          <legend className=" font-medium text-neutral-500 text-sm">Course Applied <span className='text-red-500'>*</span></legend>
           <div className="mt-2 space-y-2">
             
             <div className="flex items-center">
@@ -421,7 +421,7 @@ const CareerForm = () => {
         {/* Upload CV */}
         <div>
           <label htmlFor="cv" className="  font-medium text-neutral-500 text-sm">
-            Upload CV
+            Upload CV <span className='text-red-500'>*</span>
           </label>
           <input
             type="file"

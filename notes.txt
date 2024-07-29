@@ -39,3 +39,51 @@ qualification[text]
 add
 
 18605005555--axis
+
+
+---------------------
+<form onSubmit={handleSubmit} className="bg-black bg-opacity-60 p-8 rounded shadow-md w-full max-w-lg m-5">
+          <h2 className="text-2xl font-bold mb-6 text-center">Find a Job</h2>
+          <div className="my-8">
+            
+            <input
+              type="text"
+              name="Keyword"
+              value={formData.keyword}
+              onChange={handleChange}
+              className="w-full p-2 text-white placeholder-white bg-black bg-opacity-60 border border-gray-300 rounded"
+              placeholder="Job title, skills, or company"
+              required
+            />
+          </div>
+          <div className="my-8">
+            <select
+              name="jobType"
+              value={formData.jobType}
+              onChange={handleChange}
+              className="w-full p-2 border border-gray-300 rounded"
+              required
+            >
+              <option value="">Select Job Type</option>
+              <option value="full-time">Full-time</option>
+              <option value="part-time">Part-time</option>
+              <option value="contract">Contract</option>
+              <option value="internship">Internship</option>
+              <option value="temporary">Temporary</option>
+            </select>
+          </div>
+          <div className="my-8">
+            <input
+              type="text"
+              name="location"
+              value={formData.location}
+              onChange={handleChange}
+              className="w-full p-2 border border-gray-300 rounded"
+              placeholder="City, state, or zip"
+              required
+            />
+          </div>
+          <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">
+            Search Jobs
+          </button>
+        </form>

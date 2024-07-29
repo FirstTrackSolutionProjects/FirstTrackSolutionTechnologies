@@ -9,6 +9,7 @@ const Footer =()=>{
           behavior: 'smooth'
         });
       };
+      const whatsappUrl = `https://wa.me/9040170727?text=Hello, I would like to inquire about your services."`;
     return(
         <>
         <div className='items-center justify-center text-center mx-auto font-inter my-5'>
@@ -25,8 +26,10 @@ const Footer =()=>{
         {/*div 5 */}
         <div className="md:flex items-center justify-between p-10 bg-blue-950 shadow-md w-full md:w-[70%] mx-auto">
             <div className='text-2xl md:text-2xl justify-start text-white font-extrabold'>If you have any queries, please contact us,<br/><span className='hover:text-gray-600'> and we'll be happy to help</span></div>
-            <button onClick={() => alert('Button Clicked')}
-            className="bg-white text-orange-500 py-5 md:py-3 items-center px-4 rounded-full text-[14px] mx-auto md:w-44 font-bold flex mt-5"><PhoneIcon className="md:h-7 md:w-5 w-4 h-5 mx-1"/>ENQUIRY NOW!</button>
+            <a
+      href={whatsappUrl}
+      target="_blank"
+      rel="noopener noreferrer" className="bg-white text-orange-500 py-3 items-center justify-center px-2 md:px-4 rounded-full text-[14px] mx-auto w-40 md:w-44 font-bold flex mt-5 text-center"><PhoneIcon className="md:h-7 md:w-5 w-4 h-5 mx-1"/>ENQUIRY NOW!</a>
         </div>
 
         
@@ -59,16 +62,16 @@ const Footer =()=>{
 
                 <div className="w-full h-full items-center justify-center my-auto p-7">
                     <div className="text-xl font-semibold mb-4">Our Services</div>
-                    <div className="my-2 text-sm">Website Designing</div>
-                    <div className="my-2 text-sm">Graphics Designing</div>
-                    <div className="my-2 text-sm">Digital Marketing</div>
-                    <div className="my-2 text-sm">Application Development</div>
+                    <Link to="/services" onClick={scrollToTop}><div className="my-2 text-sm">Website Designing</div></Link>
+                    <Link to="/services" onClick={scrollToTop}><div className="my-2 text-sm">Graphics Designing</div></Link>
+                    <Link to="/services" onClick={scrollToTop}><div className="my-2 text-sm">Digital Marketing</div></Link>
+                    <Link to="/services" onClick={scrollToTop}><div className="my-2 text-sm">Application Development</div></Link>
                 </div>
                 <div className="w-full h-full items-center justify-center my-auto p-7">
                     <div className="text-xl font-semibold mb-4">Quick Links</div>
                     <div><Link to='/career' onClick={scrollToTop} className="my-2 text-sm">Career</Link></div>
                     <div><Link to='/services' onClick={scrollToTop} className="my-2 text-sm">Services</Link></div>
-                    <div><Link to='/joinus' onClick={scrollToTop} className="my-2 text-sm">Join Us</Link></div>
+                    <div><Link to='/openings' onClick={scrollToTop} className="my-2 text-sm">Join Us</Link></div>
                     <div><Link to='/joinus' onClick={scrollToTop} className="my-2 text-sm">New Employee On Boarding</Link></div>
                     <div><Link to='/blog' onClick={scrollToTop} className="my-2 text-sm">Blog</Link></div>
                     <div><Link to='/contact' onClick={scrollToTop} className="my-2 text-sm">Contact</Link></div>

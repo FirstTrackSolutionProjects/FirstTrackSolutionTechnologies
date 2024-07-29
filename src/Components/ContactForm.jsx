@@ -44,7 +44,7 @@ const ContactForm = () => {
         <div className="md:flex md:space-x-4">
           <div className="flex-1">
             <label htmlFor="firstName" className="  text-neutral-500 text-sm">
-              First Name
+              First Name <span className='text-red-500'>*</span>
             </label>
             <input
               type="text"
@@ -59,7 +59,7 @@ const ContactForm = () => {
           </div>
           <div className="flex-1">
             <label htmlFor="lastName" className=" text-neutral-500 text-sm">
-              Last Name
+              Last Name <span className='text-red-500'>*</span>
             </label>
             <input
               type="text"
@@ -78,7 +78,7 @@ const ContactForm = () => {
         <div className="md:flex md:space-x-4">
           <div className="flex-1">
             <label htmlFor="email" className=" text-neutral-500 text-sm">
-              Email
+              Email <span className='text-red-500'>*</span>
             </label>
             <input
               type="email"
@@ -93,7 +93,7 @@ const ContactForm = () => {
           </div>
           <div className="flex-1">
             <label htmlFor="phone" className=" text-neutral-500 text-sm">
-              Phone
+              Phone <span className='text-red-500'>*</span>
             </label>
             <input
               type="tel"
@@ -120,12 +120,11 @@ const ContactForm = () => {
             placeholder='Your your message here..'
             value={formData.description}
             onChange={handleChange}
+            required
             rows="4"
             className="mt-1 focus:outline-none border w-full border-gray-700 bg-neutral-200 h-20 shadow-md p-1 "
           />
         </div>
-
-       
         {/* Submit Button */}
         <div>
           <button

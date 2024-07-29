@@ -10,6 +10,8 @@ import SliderService from "../Components/SliderService";
 
 
 const Services=()=>{
+    const whatsappUrl = `https://wa.me/${9040170727}?text=${encodeURIComponent("Hello, I would like to get in touch!")}`;
+
     useEffect(() => {
         document.title = "Services - First Track Solution Technologies";
     }, []); 
@@ -38,7 +40,7 @@ const Services=()=>{
                     <div className="text-2xl text-center p-5 font-bold">Our Services</div>
                     <div className="md:grid md:grid-cols-4 h-full px-4 md:px-12 space-y-2 md:space-y-0">
                         <div className="bg-white shadow-xl h-full mx-auto justify-center pb-2">
-                            <img src="images/service1.webp" className="p-5"></img>
+                            <img src="images/service1.webp" className="p-5 h-52 w-fit"></img>
                             <div className="text-xl text-center text-orange-500 font-bold">WEBSITE DESIGNING</div>
                             <div className="justify-center mx-6 font-inter my-3">
                                 <div className="flex items-center my-1 text-gray-600"><span className="mx-2"><CheckIcon className="w-3 h-3 bg-green-600 text-white rounded-sm"/></span>1 Domain Name(.in.com)</div>
@@ -48,10 +50,14 @@ const Services=()=>{
                                 <div className="flex items-center my-1 text-gray-600"><span className="mx-2"><CheckIcon className="w-3 h-3 bg-green-600 text-white rounded-sm"/></span>2 Professional email-id for 1 year</div>
                                 <div className="flex items-center my-1 text-gray-600"><span className="mx-2"><CheckIcon className="w-3 h-3 bg-green-600 text-white rounded-sm"/></span>SSL Certificate</div>
                             </div>
-                            <div className="my-5 mx-auto bg-white rounded-md border-2 border-orange-500 w-32 text-center p-1 font-semibold">Get In Touch</div>
+                           <div className="flex items-center justify-center">
+                                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer"
+                                className="bg-white text-black border-2 border-orange-500 py-1 px-3 rounded-full shadow-md hover:bg-orange-500 hover:text-white transition duration-300">
+                                Get In Touch</a>
+                            </div>
                         </div>
                         <div className="bg-white shadow-xl h-full mx-auto justify-center pb-2">
-                            <img src="images/service2.webp" className="p-5"></img>
+                            <img src="images/service2.webp" className="p-5 h-52 w-fit"></img>
                             <div className="text-xl text-center text-orange-500 font-bold">DIGITAL MARKETING</div>
                             <div className="justify-center mx-6 font-inter my-3">
                                 <div className="flex items-center my-1 text-gray-600"><span className="mx-2"><CheckIcon className="w-3 h-3 bg-green-600 text-white rounded-sm"/></span>1 Month Work Tie-Up</div>
@@ -65,10 +71,14 @@ const Services=()=>{
                                 <div className="flex items-center my-1 text-gray-600"><span className="mx-2"><CheckIcon className="w-3 h-3 bg-green-600 text-white rounded-sm"/></span>SEO Work Include: Content Submission</div>
                                 <div className="flex items-center my-1 text-gray-600"><span className="mx-2"><CheckIcon className="w-3 h-3 bg-green-600 text-white rounded-sm"/></span>And Many More Services</div>
                             </div>
-                            <div className="my-5 mx-auto bg-white rounded-md border-2 border-orange-500 w-32 text-center p-1 font-semibold">Get In Touch</div>
+                            <div className="flex items-center justify-center my-5">
+                                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer"
+                                className="bg-white text-black border-2 border-orange-500 py-1 px-3 rounded-full shadow-md hover:bg-orange-500 hover:text-white transition duration-300">
+                                Get In Touch</a>
+                            </div>
                         </div>
                         <div className="bg-white shadow-xl h-full mx-auto justify-center pb-2">
-                            <img src="images/service3.webp" className="p-5"></img>
+                            <img src="images/service3.webp" className="p-5 h-52 w-fit"></img>
                             <div className="text-xl text-center text-orange-500 font-bold">GRAPHIC DESIGNING</div>
                             <div className="justify-center mx-6 font-inter my-3">
                                 <div className="flex items-center my-1 text-gray-600"><span className="mx-2"><CheckIcon className="w-3 h-3 bg-green-600 text-white rounded-sm"/></span>Logo Design</div>
@@ -78,10 +88,14 @@ const Services=()=>{
                                 <div className="flex items-center my-1 text-gray-600"><span className="mx-2"><CheckIcon className="w-3 h-3 bg-green-600 text-white rounded-sm"/></span>ID Card Design</div>
                                 <div className="flex items-center my-1 text-gray-600"><span className="mx-2"><CheckIcon className="w-3 h-3 bg-green-600 text-white rounded-sm"/></span>Letter Pad</div>
                             </div>
-                            <div className="my-5 mx-auto bg-white rounded-md border-2 border-orange-500 w-32 text-center p-1 font-semibold">Get In Touch</div>
+                            <div className="flex items-center justify-center">
+                                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer"
+                                className="bg-white text-black border-2 border-orange-500 py-1 px-3 rounded-full shadow-md hover:bg-orange-500 hover:text-white transition duration-300">
+                                Get In Touch</a>
+                            </div>
                         </div>
                         <div className="bg-white shadow-xl h-full mx-auto justify-center pb-2">
-                            <img src="images/service6.webp" className="p-5"></img>
+                            <img src="images/service6.webp" className="p-5 h-52 w-fit"></img>
                             <div className="text-xl text-center text-orange-500 font-bold mx-1">APPLICATION DEVELOPMENT</div>
                             <div className="justify-center mx-6 font-inter my-3">
                                 <div className="flex items-center my-1 text-gray-600"><span className="mx-2"><CheckIcon className="w-3 h-3 bg-green-600 text-white rounded-sm"/></span>1 Domain Name(.in.com)</div>
@@ -91,7 +105,11 @@ const Services=()=>{
                                 <div className="flex items-center my-1 text-gray-600"><span className="mx-2"><CheckIcon className="w-3 h-3 bg-green-600 text-white rounded-sm"/></span>2 Professional email-id for 1 year</div>
                                 <div className="flex items-center my-1 text-gray-600"><span className="mx-2"><CheckIcon className="w-3 h-3 bg-green-600 text-white rounded-sm"/></span>SSL Certificate</div>
                             </div>
-                            <div className="my-5 mx-auto bg-white rounded-md border-2 border-orange-500 w-32 text-center p-1 font-semibold">Get In Touch</div>
+                            <div className="flex items-center justify-center">
+                                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer"
+                                className="bg-white text-black border-2 border-orange-500 py-1 px-3 rounded-full shadow-md hover:bg-orange-500 hover:text-white transition duration-300">
+                                Get In Touch</a>
+                            </div>
                         </div>
 
                     </div>
@@ -105,8 +123,8 @@ const Services=()=>{
 
                 {/*div 2*/}
                 <div className="text-center mt-8 ">
-                    <div className="text-blue-500 md:text-xl font-inter font-bold">Our Brand</div>
-                    <div className="text-2xl md:text-[50px] font-bold">Clients | Parent Company</div>
+                    <div className="text-blue-500 text-xl md:text-3xl font-inter font-bold">Our Brand</div>
+                    <div className="text-2xl md:text-[50px] font-bold md:mt-3">Clients | Parent Company</div>
                 </div>
                 <div className="md:flex space-x-2 p-4 md:p-10">
                     <div className="md:w-[30%] h-40 md:h-48 bg-white container shadow-gray-700 shadow-lg md:shadow-2xl rounded-lg items-center"><img src="images/fuddins.webp" className="py-3 items-center justify-center object-cover"></img></div>
