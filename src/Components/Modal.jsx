@@ -1,6 +1,10 @@
 import React, { useRef, useEffect, useState } from 'react';
 
 const Modal = ({ closeModal }) => {
+  useEffect(() => {
+    document.title = "Services - First Track Solution Technologies";
+}, []); 
+
   const modalRef = useRef(null);
 
   const handleClickOutsideModal = (event) => {
@@ -64,7 +68,7 @@ const Modal = ({ closeModal }) => {
 
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
+    <div className="fixed w-full inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
       <div ref={modalRef} className="bg-white p-6 rounded-lg shadow-lg w-72 md:w-96 relative">
       <div className="overflow-y-auto max-h-[70vh] md:max-h-[90vh] scrollbar-hide">
         <button
@@ -79,7 +83,7 @@ const Modal = ({ closeModal }) => {
         <div className="md:flex md:space-x-4 mt-3">
           <div className="flex-1">
             <label htmlFor="firstName" className="  text-neutral-500 text-sm">
-              First Name
+              First Name <span className='text-red-500'>*</span>
             </label>
             <input
               type="text"
@@ -94,7 +98,7 @@ const Modal = ({ closeModal }) => {
           </div>
           <div className="flex-1">
             <label htmlFor="lastName" className=" text-neutral-500 text-sm">
-              Last Name
+              Last Name <span className='text-red-500'>*</span>
             </label>
             <input
               type="text"
@@ -113,7 +117,7 @@ const Modal = ({ closeModal }) => {
         
           <div className="flex-1">
             <label htmlFor="email" className=" text-neutral-500 text-sm">
-              Email
+              Email <span className='text-red-500'>*</span>
             </label>
             <input
               type="email"
@@ -128,7 +132,7 @@ const Modal = ({ closeModal }) => {
           </div>
           <div className="flex-1">
             <label htmlFor="phone" className=" text-neutral-500 text-sm">
-              Phone
+              Phone <span className='text-red-500'>*</span>
             </label>
             <input
               type="tel"
@@ -146,7 +150,7 @@ const Modal = ({ closeModal }) => {
         
           <div className="flex-1">
             <label htmlFor="streetAddress" className=" text-neutral-500 text-sm">
-              Street Address
+              Street Address <span className='text-red-500'>*</span>
             </label>
             <input
               type="text"
@@ -162,7 +166,7 @@ const Modal = ({ closeModal }) => {
           <div className="md:flex md:space-x-4">
           <div className="flex-1">
             <label htmlFor="city" className=" text-neutral-500 text-sm">
-              City
+              City <span className='text-red-500'>*</span>
             </label>
             <input
               type="text"
@@ -177,7 +181,7 @@ const Modal = ({ closeModal }) => {
           </div>
           <div className="flex-1">
             <label htmlFor="state" className=" text-neutral-500 text-sm">
-              State
+              State <span className='text-red-500'>*</span>
             </label>
             <input
               type="text"
@@ -193,7 +197,7 @@ const Modal = ({ closeModal }) => {
           </div>
           <div className="flex-1">
             <label htmlFor="postalCode" className=" text-neutral-500 text-sm">
-              Postal Code
+              Postal Code <span className='text-red-500'>*</span>
             </label>
             <input
               type="text"
@@ -208,7 +212,7 @@ const Modal = ({ closeModal }) => {
           </div>
           <div className="flex-1">
             <label htmlFor="qualification" className=" text-neutral-500 text-sm">
-              Qualification
+              Qualification <span className='text-red-500'>*</span>
             </label>
             <select
               id="qualification"
@@ -235,7 +239,7 @@ const Modal = ({ closeModal }) => {
        <div className='px-2'>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm mb-2" htmlFor="tenthDocument">
-            10th Document
+            10th Document <span className='text-red-500'>*</span>
           </label>
           <input
             type="file"
@@ -248,7 +252,7 @@ const Modal = ({ closeModal }) => {
         </div>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm mb-2" htmlFor="twelfthDocument">
-            12th Document
+            12th Document <span className='text-red-500'>*</span>
           </label>
           <input
             type="file"
@@ -267,7 +271,7 @@ const Modal = ({ closeModal }) => {
             type="file"
             id="graduationDocument"
             name='graduationDocument'
-            required
+          
             onChange={handleFileChange}
             className="w-full p-2 file:text-xs text-xs border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
@@ -286,11 +290,12 @@ const Modal = ({ closeModal }) => {
         </div>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm mb-2" htmlFor="postGraduationDocument">
-            PAN Card
+            PAN Card <span className='text-red-500'>*</span>
           </label>
           <input
             type="file"
             id="pan"
+            required
             name='pan'
             onChange={handleFileChange}
             className="w-full p-2 file:text-xs text-xs border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -298,23 +303,25 @@ const Modal = ({ closeModal }) => {
         </div>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm mb-2" htmlFor="postGraduationDocument">
-            Aadhar Card
+            Aadhar Card <span className='text-red-500'>*</span>
           </label>
           <input
             type="file"
             id="aadhar"
             name='aadhar'
+            required
             onChange={handleFileChange}
             className="w-full p-2 file:text-xs text-xs border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm mb-2" htmlFor="postGraduationDocument">
-            Bank Passbook
+            Bank Passbook <span className='text-red-500'>*</span>
           </label>
           <input
             type="file"
             id="passbook"
+            required
             name='passbook'
             onChange={handleFileChange}
             className="w-full p-2 file:text-xs text-xs border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -346,24 +353,26 @@ const Modal = ({ closeModal }) => {
         </div>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm mb-2" htmlFor="postGraduationDocument">
-            Photo
+            Photo <span className='text-red-500'>*</span>
           </label>
           <input
             type="file"
             id="photo"
             name='photo'
+            required
             onChange={handleFileChange}
             className="w-full p-2 file:text-xs text-xs border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm mb-2" htmlFor="postGraduationDocument">
-            Resume
+            Resume <span className='text-red-500'>*</span>
           </label>
           <input
             type="file"
             id="resume"
             name="resume"
+            required
             onChange={handleFileChange}
             className="w-full p-2 file:text-xs text-xs border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
           />

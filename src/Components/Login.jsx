@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
@@ -49,9 +49,9 @@ const Login = () => {
                   <input type="checkbox" className="form-checkbox" />
                   <span className="ml-2 text-gray-700 text-xs md:text-[15px]">Keep me signed in</span>
                 </label>
-                <div className='my-3'><a href="#" className="text-sky-900 hover:underline text-xs md:text-[15px]">
+                <Link to="/forgotpassword"><div className='my-3'><a href="#" className="text-sky-900 hover:underline text-xs md:text-[15px]">
                   Forgot password?
-                </a></div>
+                </a></div></Link>
               </div>
           <div>
             <button

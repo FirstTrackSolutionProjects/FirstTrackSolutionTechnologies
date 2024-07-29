@@ -18,17 +18,26 @@ const HomePage = () => {
     <div className="">
 
         {/* div 1*/} 
-
+        {/* 
         <div className='md:flex items-center justify-center md:my-5'>
+            
             <img src='images/banner-1.webp' alt='' className='md:w-2/4 max-h-fit mx-auto object-cover'></img>
-            <div className='text-3xl md:text-6xl font-bold text-center py-5 md:my-0'>Want to Start Your <span className='text-rose-500'>Business</span></div>
-            {/*<div className='text-4xl md:text-6xl font-bold text-center py-5 md:my-0 flex-col'>Your <ReactTyped className='text-rose-500' strings={["Business"]} typeSpeed={50}  loop /> </div>*/}
+            <div className='text-3xl md:text-6xl font-bold text-center py-5 md:my-0'>Want to Start Your</div>
+            <div className='text-4xl md:text-6xl font-bold text-center pb-5 md:py-5 md:my-0'> <ReactTyped className='text-rose-500' strings={["Business"]} typeSpeed={150}  loop /> </div>
+        </div> */}
+
+        <div className='md:grid md:grid-cols-2'>
+            <div className="mx-auto"><img src="images/banner-1.webp" alt="" className='max-h-fit mx-auto p-4'></img></div>
+            <div className='items-center justify-center my-5 md:my-auto mx-auto '>
+            <div className='text-3xl md:text-6xl font-bold text-center'>Want to Start Your</div>
+            <div className='text-4xl md:text-6xl font-bold text-center'> <ReactTyped className='text-rose-500' strings={["Business"]} typeSpeed={150}  loop /> </div>
+            </div>
         </div>
 
         {/* div 2*/} 
         
         <div className='md:flex items-center justify-center bg-neutral-200 p-5 md:p-16 text-center'>
-            <div className="text-[16px] md:text-2xl font-bold font-inter md:px-8">First Track Solution Technologies:</div>
+            <div className="text-[16px] md:text-2xl font-bold font-inter md:px-8">First Track Solution Technologies<br/>Private Limited</div>
             <div className="text-[14px] md:text-3xl font-bold font-inter p-5 md:px-8">A Leading Software Company<br/><ReactTyped className='text-violet-600 mt-10' strings={["Software | Internet Company"]} typeSpeed={120} loop  /></div>
         </div>
 
@@ -53,28 +62,28 @@ const HomePage = () => {
             </div>
         </div>
         <div className="w-full md:w-[45%] p-5 my-auto">
-        <div class="grid md:grid-cols-2 gap-4 min-h-fit">
-            <div class="container shadow-md rounded-md p-4 h-48">
-                <div className='text-center'>
-                    <img src='images/circle_orange.webp' className='items-center justify-center mx-auto'></img>
+        <div className="grid md:grid-cols-2 gap-4 min-h-fit">
+            <div class="container shadow-md rounded-md md:p-4  h-40 md:h-48 items-center justify-center">
+                <div className='text-center items-center justify-center'>
+                    <img src='images/circle_orange.webp' className='h-20 md:h-fit items-center justify-center mx-auto'></img>
                     <div className='my-5  font-bold text-gray-700'>Design</div>
                 </div>
             </div>
-            <div class="p-4 h-48 container shadow-md rounded-md">
-            <div className='text-center'>
-                    <img src='images/circle_blue.webp' className='items-center justify-center mx-auto'></img>
+            <div className="md:p-4 h-40 md:h-48 container shadow-md rounded-md items-center justify-center">
+            <div className='text-center items-center justify-center'>
+                    <img src='images/circle_blue.webp' className='h-20 md:h-fit items-center justify-center mx-auto'></img>
                     <div className='my-5  font-bold text-gray-700'>Development</div>
                 </div>
             </div>
-            <div class="p-4 h-52 container shadow-md rounded-md">
-            <div className='text-center'>
-                    <img src='images/circle_green.webp' className='items-center justify-center mx-auto'></img>
-                    <div className='my-6  font-bold text-gray-700'>Product UX, Design & Development</div>
+            <div className="md:p-4 h-44 md:h-52 container shadow-md rounded-md items-center justify-center">
+            <div className='text-center items-center'>
+                    <img src='images/circle_green.webp' className='h-20 md:h-fit items-center justify-center mx-auto'></img>
+                    <div className='mt-6  font-bold text-gray-700'>Product UX, Design & Development</div>
                 </div>
             </div>
-            <div class="p-4 h-52 container shadow-md rounded-md">
-            <div className='text-center'>
-                    <img src='images/circle_purple.webp' className='items-center justify-center mx-auto'></img>
+            <div className="md:p-4 h-44 md:h-52 container shadow-md rounded-md items-center justify-center">
+            <div className='text-center items-center justify-center'>
+                    <img src='images/circle_purple.webp' className='h-20 md:h-fit items-center justify-center mx-auto'></img>
                     <div className='my-6 font-bold text-gray-700'>Marketing Stategy and Creative Campaigns</div>
                 </div>
             </div>

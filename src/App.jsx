@@ -22,6 +22,8 @@ import Dropdown from './Components/DropDown'
 import Openings from './Pages/Openings'
 import LoginPage from './Pages/LoginPage'
 import SignupPage from './Pages/SignupPage'
+import PasswordProtectedPage from './Components/PasswordProtectedPage'
+import ForgotPasword from './Pages/ForgotPassword'
 
 
 function App() {
@@ -33,7 +35,7 @@ function App() {
         <Route path="/" element={<HomePage/>}></Route>
         <Route path="/career" element={<Career/>}></Route>
         <Route path="/services" element={<Services/>}></Route>
-        <Route path="/joinus" element={<JoinUs/>}></Route>
+        <Route path="/joinus" element={<PasswordProtectedPage/>}></Route>
         <Route path="/contact" element={<Contact/>}></Route>
         <Route path="/about" element={<About/>}></Route>
         <Route path="/blog" element={<BlogsPage/>}></Route>
@@ -46,11 +48,12 @@ function App() {
         <Route path="/ecom" element={<Ecom/>}></Route>
         <Route path="/login" element={<LoginPage/>}></Route>
         <Route path="/signup" element={<SignupPage/>}></Route>
-      
+        <Route path="/openings" element={<Openings/>}></Route>
+        <Route path="/forgotpassword" element={<ForgotPasword/>}></Route>
       </Routes>
       
       <Footer/>
-      <WhatsAppChatPopup/>
+      <WhatsAppChatPopup phoneNumber={9040170727} message={'Hello! I would like to chat.'}/>
     </div>
   )
 }
