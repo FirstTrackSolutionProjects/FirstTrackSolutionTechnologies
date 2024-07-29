@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-
+import {v4 as uuidv4} from 'uuid'
 const Modal = ({ closeModal }) => {
   useEffect(() => {
     document.title = "Services - First Track Solution Technologies";
@@ -31,7 +31,7 @@ const Modal = ({ closeModal }) => {
     state:'',
     postalCode: '',
     description: '',
-    qualification: '',
+    qualification: '12th',
     tenthDocument:null,
     twelfthDocument:null,
     graduationDocument:null,
@@ -54,16 +54,63 @@ const Modal = ({ closeModal }) => {
     };
   
     const handleFileChange = (e) => {
-      setFormData({
-        ...formData,
-        cv: e.target.files[0]
+      const { name, files } = e.target; 
+      setFormData((prev)=>{
+          return{
+          ...prev,
+          [name]: files[0]
+        }
       });
-    };
+  };
   
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
       e.preventDefault();
-      // Handle form submission logic here
-      console.log(formData);
+      let docsName = ['tenthDocument', 'twelfthDocument', 'graduationDocument', 'postGraduationDocument', 'pan', 'aadhar', 'passbook', 'letter', 'salary', 'photo', 'resume']
+      let docs = {
+        tenthDocument : '',
+        twelfthDocument : '',
+        graduationDocument : '',
+        postGraduationDocument : '',
+        pan : '',
+        aadhar : '',
+        passbook : '',
+        letter : '',
+        salary : '',
+        photo : '',
+        resume : ''
+      }
+      const reqUUID = uuidv4();
+       for (let i =0; i < docsName.length; i++) {
+        const key = docsName[i]
+        docs[key] = `joiningForm/${reqUUID}/${uuidv4()}`;
+        const response = await fetch('/.netlify/functions/getPutSignedUrl',{
+          method : 'POST',
+          headers : {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body : JSON.stringify({key:docs[key], filetype: formData[key]?.type })
+        })
+        const responseBody = await response.json()
+        const uploadURL = responseBody.uploadURL;
+        await fetch(uploadURL, {
+          method: "PUT",
+          headers: {
+          'Content-Type': formData[key]?.type
+        },
+        body: formData[key],
+        }).catch(err => {alert(err); return});
+        }
+    
+    
+    await fetch("/.netlify/functions/joinMail",{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({formData, docs}),
+    }).then(response => response.json()).then(result => alert(result.message))
     };
 
 
@@ -218,11 +265,12 @@ const Modal = ({ closeModal }) => {
               id="qualification"
               name="qualification" 
               onChange={handleChange}
+              value={formData.qualification}
               className="mt-1 text-sm focus:outline-none block w-full p-1 border text-neutral-500 border-gray-700 bg-neutral-100 h-8 ">
               
-                <option value={formData.qualification}>12th</option>
-                <option value={formData.qualification}>Graduation</option>
-                <option value={formData.qualification}>Post Graduation</option>
+                <option value="12th">12th</option>
+                <option value="Graduation">Graduation</option>
+                <option value="Post Graduation">Post Graduation</option>
              
             </select>
             

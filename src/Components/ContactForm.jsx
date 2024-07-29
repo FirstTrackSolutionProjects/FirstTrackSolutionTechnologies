@@ -25,10 +25,16 @@ const ContactForm = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log(formData);
+    await fetch("/.netlify/functions/contactMail",{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(formData),
+    }).then(response => response.json()).then(result => alert(result.message))
   };
 
   return (
@@ -119,8 +125,6 @@ const ContactForm = () => {
             className="mt-1 focus:outline-none border w-full border-gray-700 bg-neutral-200 h-20 shadow-md p-1 "
           />
         </div>
-
-       
         {/* Submit Button */}
         <div>
           <button
