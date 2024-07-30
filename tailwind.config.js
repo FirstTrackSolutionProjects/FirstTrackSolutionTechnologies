@@ -26,8 +26,8 @@ export default {
         marquee: 'marquee 15s linear infinite',
       },
       backgroundImage: {
-        'bg-login': "url('images/bg2.png')",
-        'bg-signup': "url('images/bg3.jpg')",
+        'bg-login': "url('src/assets/bg/bg2.png')",
+        'bg-signup': "url('src/assets/bg/bg3.jpg')",
         
       },
       fontFamily: { 
