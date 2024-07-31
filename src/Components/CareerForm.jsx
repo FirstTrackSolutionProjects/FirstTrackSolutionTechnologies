@@ -269,7 +269,7 @@ const CareerForm = () => {
         </fieldset>
 
         <fieldset>
-          <legend className=" font-medium text-neutral-500 text-sm">Course Applied <span className='text-red-500'>*</span></legend>
+          <legend className=" font-medium text-neutral-500 text-sm">Job Applied <span className='text-red-500'>*</span></legend>
           <div className="mt-2 space-y-2">
             
             <div className="flex items-center">
