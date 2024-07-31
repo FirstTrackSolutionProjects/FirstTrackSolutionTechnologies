@@ -5,6 +5,7 @@ import CounterCard from '../Components/CounterCard';
 import ServicesLayout from '../Components/ServicesLayout';
 import ProgressBar from '../Components/ProgressBar';
 import AnalysisForm from '../Components/AnalysisForm';
+import TrustedPartners from '../Components/TrustedPartners';
 
 const HomePage = () => {
     useEffect(() => {
@@ -63,7 +64,7 @@ const HomePage = () => {
         </div>
         <div className="w-full md:w-[45%] p-5 my-auto">
         <div className="grid md:grid-cols-2 gap-4 min-h-fit">
-            <div class="container shadow-md rounded-md md:p-4  h-40 md:h-48 items-center justify-center">
+            <div className="container shadow-md rounded-md md:p-4  h-40 md:h-48 items-center justify-center">
                 <div className='text-center items-center justify-center'>
                     <img src='images/circle_orange.webp' className='h-20 md:h-fit items-center justify-center mx-auto'></img>
                     <div className='my-5  font-bold text-gray-700'>Design</div>
@@ -185,9 +186,11 @@ const HomePage = () => {
                 <AnalysisForm/>
             </div>
         </div>
-       
-                
-                
+
+        <div className='w-full mx-auto font-inter py-2 md:py-5 bg-gradient-to-r from-black via-gray-500 to-slate-300'>
+            <div className='text-center text-xl md:text-4xl mt-3 mb-6 font-bold text-white'>Our Trusted Partners</div>
+            <TrustedPartners/>
+        </div>
     
     </div>
   );

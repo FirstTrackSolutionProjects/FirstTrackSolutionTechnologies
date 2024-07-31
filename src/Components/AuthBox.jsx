@@ -51,10 +51,10 @@ const AuthBox = () => {
             
             <input
               type="text"
-              name="Keyword"
+              name="keyword"
               value={formData.keyword}
               onChange={handleChange}
-              className="w-full p-2 text-white placeholder-white bg-black bg-opacity-60 rounded"
+              className="w-full p-2 placeholder:text-gray-400 text-gray-300 bg-black bg-opacity-60 rounded"
               placeholder="Job title, skills, or company"
               required
             />
@@ -64,7 +64,8 @@ const AuthBox = () => {
               name="jobType"
               value={formData.jobType}
               onChange={handleChange}
-              className="w-full p-2 text-white placeholder-white bg-black bg-opacity-60  rounded"
+              className="w-full p-2 text-gray-400 text-base  bg-black bg-opacity-60  rounded"
+              placeholder="Select Job type"
               required
             >
               <option className='bg-white text-black'  value="">Select Job Type</option>
@@ -81,7 +82,7 @@ const AuthBox = () => {
               name="location"
               value={formData.location}
               onChange={handleChange}
-              className="w-full p-2 text-white placeholder-white bg-black bg-opacity-60  rounded"
+              className="w-full p-2  text-base placeholder:text-gray-400 text-gray-300 bg-black bg-opacity-60  rounded"
               placeholder="Location"
               required
             />
