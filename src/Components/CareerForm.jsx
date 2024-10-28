@@ -228,7 +228,7 @@ const CareerForm = () => {
                 type="radio"
                 id="postgrad"
                 name="qualification"
-                value="Post Grduation"
+                value="Post Graduation"
                 checked={formData.qualification === "Post Graduation"}
                 onChange={handleChange}
                 className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
