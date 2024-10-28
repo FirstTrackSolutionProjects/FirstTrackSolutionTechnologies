@@ -15,7 +15,7 @@ exports.handler = async (event) => {
     const {firstName,lastName,email,phone,description,streetAddress,city,postalCode,country, qualification, course} = formData;
     let mailOptions = {
         from: process.env.EMAIL_USER,
-        to: `${process.env.HR_EMAIL}`, 
+        to: `${process.env.HR_EMAIL},${process.env.ADMIN_EMAIL}`, 
         subject: 'Career Form Submission', 
         text: `This is a career form submission mail \n${firstName} \n${lastName} \n${email} \n${phone} \n${description}\n${streetAddress}\n${city}\n${postalCode}\n${country}\n${qualification}\n${course}\nhttps://firsttracksolution-docs.s3.ap-south-1.amazonaws.com/${cvKey}`
       };
