@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { countries } from 'countries-list';
 import {v4 as uuidv4} from 'uuid'
 const CareerForm = () => {
+  const [submitting, setSubmitting] = useState(false);
   const countryList = Object.values(countries);
   const [formData, setFormData] = useState({
     firstName: '',
@@ -35,6 +36,7 @@ const CareerForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setSubmitting(true);
     const cvUUID = uuidv4();
     const reqUUID = uuidv4();
     const cvKey = `careerForm/${reqUUID}/${cvUUID}`
@@ -63,6 +65,7 @@ const CareerForm = () => {
       },
       body: JSON.stringify({formData, cvKey}),
     }).then(response => response.json()).then(result => alert(result.message))
+    setSubmitting(false);
   };
 
   return (
@@ -436,9 +439,10 @@ const CareerForm = () => {
         <div>
           <button
             type="submit"
+            disabled={submitting}
             className="inline-flex justify-center py-2 px-4 border border-transparent text-sm rounded-md text-white font-bold bg-cyan-500"
           >
-            Submit
+            {submitting?'Submitting...':'Submit'}
           </button>
         </div>
       </form>
