@@ -21,7 +21,7 @@ exports.handler = async (event) => {
       };
       try{
         await transporter.sendMail(mailOptions)
-        return {statusCode: 200, body: JSON.stringify({message : cvKey})};
+        return {statusCode: 200, body: JSON.stringify({message : 'Form submitted successfully'})};
       } catch(e){ 
         return {statusCode: 500, body: JSON.stringify({message : 'Failed to send email. Please try again.'})};
       }
