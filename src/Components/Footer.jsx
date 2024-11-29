@@ -56,7 +56,7 @@ const Footer =()=>{
                     
                     <div className="flex items-center">
                         <FaEnvelope className="h-5 w-4 mr-3" />
-                        <span className="text-justify text-sm">Email: info@firsttracksolution.tech</span>
+                        <span className="text-justify text-sm">Email: contact@firsttracksolution.tech</span>
                     </div>
                 </div>
 
