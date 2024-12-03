@@ -35,7 +35,7 @@ const TermsOfUse = () => {
       <p className="mb-4">These terms shall be governed and construed in accordance with the laws of the state/country, without regard to its conflict of law provisions.</p>
 
       <h2 className="text-lg md:text-2xl font-semibold mb-2">9. Contact Information</h2>
-      <p className="mb-4">If you have any questions about these Terms, please contact us at <span className='text-blue-500'>info@firsttracksolution.tech</span></p>
+      <p className="mb-4">If you have any questions about these Terms, please contact us at <span className='text-blue-500'>contact@firsttracksolutiontechnologies.com</span></p>
     </div>
   );
 }

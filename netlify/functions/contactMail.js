@@ -14,7 +14,7 @@ exports.handler = async (event) => {
     const {firstName,lastName,email,phone,description} = JSON.parse(event.body);
     let mailOptions = {
         from: process.env.EMAIL_USER,
-        to: `${process.env.EMAIL_USER}`, 
+        to: `${process.env.CONTACT_EMAIL}`, 
         subject: 'Contact Submission', 
         text: `This is a contact submission mail \n${firstName} \n${lastName} \n${email} \n${phone} \n${description}`
       };

@@ -10,12 +10,12 @@ const PrivacyPolicy = () => {
     <div className="min-h-screen bg-gray-100 p-6 font-inter">
       <div className="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-md">
         <h1 className="text-3xl font-bold mb-6">Privacy Policy</h1>
-        <p className="mb-4"><span className='font-semibold'>Email: </span>info@firsttracksolution.tech</p>
+        <p className="mb-4"><span className='font-semibold'>Email: </span>contact@firsttracksolutiontechnologies.com</p>
         <p className="mb-4"><span className='font-semibold'>Last updated: </span> July 18, 2024</p>
         
         <h2 className="text-2xl font-semibold mb-4">Introduction</h2>
         <p className="mb-4">
-        First Track Solution Technologies is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website <span className='text-blue-500'>https://firsttracksolution.tech/</span> and when you use our services .
+        First Track Solution Technologies is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website <span className='text-blue-500'>https://firsttracksolutiontechnologies.com/</span> and when you use our services .
          Please read this policy carefully to understand our policies and practices regarding your information and how we will treat it.</p>
 
         <h2 className="text-2xl font-semibold mb-4">Information We Collect</h2>
@@ -62,8 +62,8 @@ const PrivacyPolicy = () => {
           If you have any questions about this Privacy Policy, please contact us:
         </p>
         <ul className="list-disc pl-6">
-          <li>By email: <span className='text-blue-500'> info@firsttracksolution.tech</span></li>
-          <li>By visiting this page on our website: <span className='text-blue-500'> https://firsttracksolution.tech/</span> </li>
+          <li>By email: <span className='text-blue-500'> contact@firsttracksolutiontechnologies.com</span></li>
+          <li>By visiting this page on our website: <span className='text-blue-500'> https://firsttracksolutiontechnologies.com/</span> </li>
           <li>By phone number: +91-9040170727</li>
         </ul>
       </div>
