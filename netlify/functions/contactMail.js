@@ -16,7 +16,11 @@ exports.handler = async (event) => {
         from: process.env.EMAIL_USER,
         to: `${process.env.CONTACT_EMAIL}`, 
         subject: 'Contact Submission', 
-        text: `This is a contact submission mail \n${firstName} \n${lastName} \n${email} \n${phone} \n${description}`
+        text: `First Name : ${firstName} \n
+              Last Name : ${lastName} \n
+              Email : ${email} \n
+              Phone : ${phone} \n
+              Description : ${description}`
       };
       try{
         await transporter.sendMail(mailOptions)
