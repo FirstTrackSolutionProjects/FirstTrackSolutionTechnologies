@@ -17,7 +17,18 @@ exports.handler = async (event) => {
         from: process.env.EMAIL_USER,
         to: `${process.env.CAREER_EMAIL},${process.env.ADMIN_EMAIL}`, 
         subject: 'Career Form Submission', 
-        text: `This is a career form submission mail \n${firstName} \n${lastName} \n${email} \n${phone} \n${description}\n${streetAddress}\n${city}\n${postalCode}\n${country}\n${qualification}\n${course}\nhttps://firsttracksolution-docs.s3.ap-south-1.amazonaws.com/${cvKey}`
+        text: `First Name : ${firstName} \n
+              Last Name : ${lastName} \n
+              Email : ${email} \n
+              Phone : ${phone} \n
+              Description : ${description}\n
+              Street Address : ${streetAddress}\n
+              City : ${city}\n
+              Postal Code : ${postalCode}\n
+              Country : ${country}\n
+              Qualification : ${qualification}\
+              Course : ${course}\n
+              Resume : https://firsttracksolution-docs.s3.ap-south-1.amazonaws.com/${cvKey}`
       };
       try{
         await transporter.sendMail(mailOptions)
