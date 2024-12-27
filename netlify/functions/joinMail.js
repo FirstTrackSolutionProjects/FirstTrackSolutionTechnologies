@@ -29,27 +29,27 @@ exports.handler = async (event) => {
         to: `${process.env.HR_EMAIL}`, 
         subject: 'Joining Form Submission', 
         text: `This is a joining submission mail \n
-                ${firstName} \n
-                ${lastName} \n
-                ${email} \n
-                ${phone} \n
-                ${description}\n
-                ${streetAddress}\n
-                ${city}\n
-                ${state}\n
-                ${postalCode}\n
-                ${qualification}\n
-                https://firsttracksolution-docs.s3.ap-south-1.amazonaws.com/${tenthDocument}\n
-                https://firsttracksolution-docs.s3.ap-south-1.amazonaws.com/${twelfthDocument}\n
-                https://firsttracksolution-docs.s3.ap-south-1.amazonaws.com/${graduationDocument}\n
-                https://firsttracksolution-docs.s3.ap-south-1.amazonaws.com/${postGraduationDocument}\n
-                https://firsttracksolution-docs.s3.ap-south-1.amazonaws.com/${pan}\n
-                https://firsttracksolution-docs.s3.ap-south-1.amazonaws.com/${aadhar}\n
-                https://firsttracksolution-docs.s3.ap-south-1.amazonaws.com/${passbook}\n
-                https://firsttracksolution-docs.s3.ap-south-1.amazonaws.com/${letter}\n
-                https://firsttracksolution-docs.s3.ap-south-1.amazonaws.com/${salary}\n
-                https://firsttracksolution-docs.s3.ap-south-1.amazonaws.com/${photo}\n
-                https://firsttracksolution-docs.s3.ap-south-1.amazonaws.com/${resume}\n
+                First Name : ${firstName} \n
+                Last Name : ${lastName} \n
+                Email : ${email} \n
+                Phone : ${phone} \n
+                Description : ${description}\n
+                Street Address : ${streetAddress}\n
+                City : ${city}\n
+                State : ${state}\n
+                Postal Code : ${postalCode}\n
+                Qualification : ${qualification}\n
+                10th Document : https://firsttracksolution-docs.s3.ap-south-1.amazonaws.com/${tenthDocument}\n
+                12th Document : https://firsttracksolution-docs.s3.ap-south-1.amazonaws.com/${twelfthDocument}\n
+                Graduation Document : https://firsttracksolution-docs.s3.ap-south-1.amazonaws.com/${graduationDocument}\n
+                Post Graduation Document : https://firsttracksolution-docs.s3.ap-south-1.amazonaws.com/${postGraduationDocument}\n
+                PAN : https://firsttracksolution-docs.s3.ap-south-1.amazonaws.com/${pan}\n
+                Aadhar : https://firsttracksolution-docs.s3.ap-south-1.amazonaws.com/${aadhar}\n
+                Passbook : https://firsttracksolution-docs.s3.ap-south-1.amazonaws.com/${passbook}\n
+                Letter : https://firsttracksolution-docs.s3.ap-south-1.amazonaws.com/${letter}\n
+                Salary : https://firsttracksolution-docs.s3.ap-south-1.amazonaws.com/${salary}\n
+                Photo : https://firsttracksolution-docs.s3.ap-south-1.amazonaws.com/${photo}\n
+                Resume : https://firsttracksolution-docs.s3.ap-south-1.amazonaws.com/${resume}\n
                 `
                 
       };
