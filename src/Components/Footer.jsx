@@ -66,6 +66,7 @@ const Footer =()=>{
                     <Link to="/services" onClick={scrollToTop}><div className="my-2 text-sm">Graphics Designing</div></Link>
                     <Link to="/services" onClick={scrollToTop}><div className="my-2 text-sm">Digital Marketing</div></Link>
                     <Link to="/services" onClick={scrollToTop}><div className="my-2 text-sm">Application Development</div></Link>
+                    <a href='https://firsttrack.site/' target='_blank' className="my-2 text-sm">Logistics</a>
                 </div>
                 <div className="w-full h-full items-center justify-center my-auto p-7">
                     <div className="text-xl font-semibold mb-4">Quick Links</div>
