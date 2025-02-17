@@ -12,7 +12,7 @@ const transporter = nodemailer.createTransport({
 
 exports.handler = async (event) => {
     const {formData, cvKey} = JSON.parse(event.body)
-    const {firstName,lastName,email,phone,description,streetAddress,city,postalCode,country, qualification, course} = formData;
+    const {firstName,lastName,email,phone,description,streetAddress,city,postalCode,country, qualification, course, gender, dob} = formData;
     let mailOptions = {
         from: process.env.EMAIL_USER,
         to: `${process.env.CAREER_EMAIL},${process.env.ADMIN_EMAIL}`, 
@@ -21,6 +21,8 @@ exports.handler = async (event) => {
               Last Name : ${lastName} \n
               Email : ${email} \n
               Phone : ${phone} \n
+              Gender : ${gender} \n
+              Date of Birth : ${dob} \n
               Description : ${description}\n
               Street Address : ${streetAddress}\n
               City : ${city}\n

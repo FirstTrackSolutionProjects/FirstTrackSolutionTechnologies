@@ -12,10 +12,12 @@ const CareerForm = () => {
     streetAddress: '',
     city: '',
     postalCode: '',
-    country: '',
+    country: 'India',
     description: '',
     qualification: '',
     course:'',
+    gender: 'Male',
+    dob: '',
     cv: null
   });
 
@@ -136,6 +138,37 @@ const CareerForm = () => {
               required
             />
           </div>
+          <div className="flex-1">
+            <label htmlFor="dob" className=" text-neutral-500 text-sm">
+              Date of Birth <span className='text-red-500'>*</span>
+            </label>
+            <input
+              type="date"
+              id="dob"
+              name="dob"
+              value={formData.dob}
+              onChange={handleChange}
+              className="mt-1 focus:outline-none border w-full border-gray-700 bg-neutral-200 h-8 shadow-md p-1 "
+              required
+            />
+          </div>
+          <div className="flex-1">
+            <label htmlFor="gender" className=" text-neutral-500 text-sm">
+              Gender <span className='text-red-500'>*</span>
+            </label>
+            <select
+              id="gender"
+              name="gender" 
+              onChange={handleChange}
+              value={formData.gender}
+              className="mt-1  focus:outline-none block w-full p-1 border text-neutral-500 border-gray-700 bg-neutral-200 h-8 ">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+            
+            
+          </div>
+          
         </div>
 
         {/* Address Fields */}
@@ -186,16 +219,17 @@ const CareerForm = () => {
             />
           </div>
           <div className="flex-1">
-            <label htmlFor="state" className=" text-neutral-500 text-sm">
+            <label htmlFor="country" className=" text-neutral-500 text-sm">
               Country <span className='text-red-500'>*</span>
             </label>
             <select
               id="country"
               name="country" 
               onChange={handleChange}
+              value={formData.country}
               className="mt-1  focus:outline-none block w-full p-1 border text-neutral-500 border-gray-700 bg-neutral-200 h-8 ">
               {countryList.map((country) => (
-                <option key={country.name} value={formData.country.name}>
+                <option key={country.name} value={country.name}>
                   {country.name}
                 </option>
               ))}
