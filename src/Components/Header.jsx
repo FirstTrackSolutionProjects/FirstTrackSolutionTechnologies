@@ -71,6 +71,7 @@ const Header = () => {
                 {/*<Link to="/finance" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Financial Services</Link>*/}
                 <Link to="/training" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Training & Development</Link>
                 <Link to="/recruit" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Recruitment<br/>Job Portal</Link>
+                <a href='https://firsttrack.site/' target='_blank' className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Logistics</a>
             
             </div>
         )}
