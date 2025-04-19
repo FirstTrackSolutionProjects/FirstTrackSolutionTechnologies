@@ -15,27 +15,31 @@ exports.handler = async (event) => {
     const {firstName,lastName,email,phone,description,streetAddress,city,postalCode,country, qualification, course, gender, dob} = formData;
     let mailOptions = {
         from: process.env.EMAIL_USER,
-        to: `${process.env.CAREER_EMAIL},${process.env.ADMIN_EMAIL}`, 
-        subject: 'Career Form Submission', 
-        text: `First Name : ${firstName} \n
-              Last Name : ${lastName} \n
-              Email : ${email} \n
-              Phone : ${phone} \n
-              Gender : ${gender} \n
-              Date of Birth : ${dob} \n
-              Description : ${description}\n
-              Street Address : ${streetAddress}\n
-              City : ${city}\n
-              Postal Code : ${postalCode}\n
-              Country : ${country}\n
-              Qualification : ${qualification}\
-              Course : ${course}\n
-              Resume : https://firsttracksolution-docs.s3.ap-south-1.amazonaws.com/${cvKey}`
-      };
+        to: `${process.env.CAREER_EMAIL},${process.env.ADMIN_EMAIL}`,
+        subject: 'Career Form Submission',
+        html: `
+          <h2>New Career Application</h2>
+          <p><strong>First Name:</strong> ${firstName}</p>
+          <p><strong>Last Name:</strong> ${lastName}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Phone:</strong> ${phone}</p>
+          <p><strong>Gender:</strong> ${gender}</p>
+          <p><strong>Date of Birth:</strong> ${dob}</p>
+          <p><strong>Street Address:</strong> ${streetAddress}</p>
+          <p><strong>City:</strong> ${city}</p>
+          <p><strong>Postal Code:</strong> ${postalCode}</p>
+          <p><strong>Country:</strong> ${country}</p>
+          <p><strong>Qualification:</strong> ${qualification}</p>
+          <p><strong>Position Applied For:</strong> ${course}</p>
+          <p><strong>Description:</strong> ${description}</p>
+          <p><strong>Resume:</strong> <a href="https://firsttracksolution-docs.s3.ap-south-1.amazonaws.com/${cvKey}">View Resume</a></p>
+        `
+    };
       try{
         await transporter.sendMail(mailOptions)
         return {statusCode: 200, body: JSON.stringify({message : 'Form submitted successfully'})};
       } catch(e){ 
+        console.error('Error sending email:', e);
         return {statusCode: 500, body: JSON.stringify({message : 'Failed to send email. Please try again.'})};
       }
 

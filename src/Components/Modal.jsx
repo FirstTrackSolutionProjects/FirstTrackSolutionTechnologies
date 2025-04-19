@@ -79,38 +79,57 @@ const Modal = ({ closeModal }) => {
         photo : '',
         resume : ''
       }
+      
       const reqUUID = uuidv4();
-       for (let i =0; i < docsName.length; i++) {
-        const key = docsName[i]
-        docs[key] = `joiningForm/${reqUUID}/${uuidv4()}`;
-        const response = await fetch('/.netlify/functions/getPutSignedUrl',{
-          method : 'POST',
-          headers : {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-          },
-          body : JSON.stringify({key:docs[key], filetype: formData[key]?.type })
-        })
-        const responseBody = await response.json()
-        const uploadURL = responseBody.uploadURL;
-        await fetch(uploadURL, {
-          method: "PUT",
+      try {
+        // Create array of upload promises
+        const uploadPromises = docsName.map(async (key) => {
+          if (!formData[key]) return; // Skip if no file
+
+          docs[key] = `joiningForm/${reqUUID}/${uuidv4()}`;
+          
+          // Get signed URL
+          const response = await fetch('/.netlify/functions/getPutSignedUrl', {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ key: docs[key], filetype: formData[key]?.type })
+          });
+          
+          const { uploadURL } = await response.json();
+          
+          // Upload file
+          return fetch(uploadURL, {
+            method: "PUT",
+            headers: {
+              'Content-Type': formData[key]?.type
+            },
+            body: formData[key]
+          });
+        });
+
+        // Wait for all uploads to complete in parallel
+        await Promise.all(uploadPromises);
+
+        // Send email notification
+        const emailResponse = await fetch("/.netlify/functions/joinMail", {
+          method: 'POST',
           headers: {
-          'Content-Type': formData[key]?.type
-        },
-        body: formData[key],
-        }).catch(err => {alert(err); return});
-        }
-    
-    
-    await fetch("/.netlify/functions/joinMail",{
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify({formData, docs}),
-    }).then(response => response.json()).then(result => alert(result.message))
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({ formData, docs }),
+        });
+        
+        const result = await emailResponse.json();
+        alert(result.message);
+
+      } catch (error) {
+        alert("Error submitting form. Please try again.");
+        console.error(error);
+      }
     };
 
 

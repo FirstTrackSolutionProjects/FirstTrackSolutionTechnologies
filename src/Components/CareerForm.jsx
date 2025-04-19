@@ -39,35 +39,49 @@ const CareerForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
-    const cvUUID = uuidv4();
-    const reqUUID = uuidv4();
-    const cvKey = `careerForm/${reqUUID}/${cvUUID}`
-    const response = await fetch('/.netlify/functions/getPutSignedUrl',{
-      method : 'POST',
-      headers : {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body : JSON.stringify({key:cvKey, filetype: formData.cv.type })
-    })
-    const responseBody = await response.json()
-    const uploadURL = responseBody.uploadURL;
-    await fetch(uploadURL, {
-      method: "PUT",
-      headers: {
-        'Content-Type': formData.cv.type
-      },
-      body: formData.cv,
-    }).catch(err => {alert(err); return});
-    await fetch("/.netlify/functions/careerMail",{
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify({formData, cvKey}),
-    }).then(response => response.json()).then(result => alert(result.message))
-    setSubmitting(false);
+    try {
+      const reqUUID = uuidv4();
+      const cvKey = `careerForm/${reqUUID}/${uuidv4()}`;
+      
+      // Get signed URL for CV
+      const response = await fetch('/.netlify/functions/getPutSignedUrl', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ key: cvKey, filetype: formData.cv.type })
+      });
+      
+      const { uploadURL } = await response.json();
+      
+      // Upload CV
+      await fetch(uploadURL, {
+        method: "PUT",
+        headers: {
+          'Content-Type': formData.cv.type
+        },
+        body: formData.cv,
+      });
+
+      // Send email notification
+      const emailResponse = await fetch("/.netlify/functions/careerMail", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({ formData, cvKey }),
+      });
+
+      const result = await emailResponse.json();
+      alert(result.message);
+    } catch (error) {
+      alert("Error submitting form. Please try again.");
+      console.error(error);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
