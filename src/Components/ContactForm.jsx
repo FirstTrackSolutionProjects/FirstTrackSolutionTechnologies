@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+const BACKEND_URL = import.meta.env.VITE_APP_BACKEND_URL;
+
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -27,7 +29,7 @@ const ContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await fetch("/.netlify/functions/contactMail",{
+    await fetch(`${BACKEND_URL}/email/contact`,{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -21,12 +21,14 @@ import LoginPage from './Pages/LoginPage'
 import SignupPage from './Pages/SignupPage'
 import PasswordProtectedPage from './Components/PasswordProtectedPage'
 import ForgotPasword from './Pages/ForgotPassword'
+import { ToastContainer } from 'react-toastify'
 
 
 function App() {
 
   return (
     <div>
+      <ToastContainer />
       <Header/>
       <Routes>
         <Route path="/" element={<HomePage/>}></Route>

@@ -1,9 +1,85 @@
-import React, { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import {v4 as uuidv4} from 'uuid'
+
+const BACKEND_URL = import.meta.env.VITE_APP_BACKEND_URL;
 const Modal = ({ closeModal }) => {
+  const [loadingState, setLoadingState] = useState(null);
+
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    fathersName: '',
+    mothersName: '',
+    landmark: '',
+    streetAddress: '',
+    city: '',
+    state:'',
+    postalCode: '',
+    qualification: '12th',
+    dob: '',
+    gender: 'Male',
+    bloodGroup: 'B+',
+    maritalStatus: 'Single',
+    aadhaar: '',
+    pan: '',
+    age: '',
+    country: 'India',
+    permanentAddressLandmark: '',
+    permanentStreetAddress: '',
+    permanentAddressCity: '',
+    permanentAddressState: '',
+    permanentAddresstPostalCode: '',
+    permanentAddressCountry: 'India',
+    isPermanentAddressSame: true
+    });
+    const [files , setFiles] = useState({
+      tenthDocument:null,
+    twelfthDocument:null,
+    graduationDocument:null,
+    postGraduationDocument:null,
+    panDoc:null,
+    aadhaarDoc:null,
+    passbook:null,
+    letter:null,
+    salary:null,
+    photo:null      
+    });
+
+  const getJoinUsRequestDetail = async () => {
+    try{
+      const response = await fetch(`${BACKEND_URL}/join-us-requests/details`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `${localStorage.getItem('joinUsToken')}`
+        }
+      })
+      const data = await response.json();
+      if (data.success){
+        const basicData = {
+          firstName: data.data.first_name,
+          lastName: data.data.last_name,
+          email: data.data.email,
+          phone: data.data.mobile,
+        }
+        setFormData((prev)=> ({...prev, ...basicData}));
+      } else {
+        alert(data.message || 'Something went wrong');
+        closeModal();
+      }
+    } catch (error) {
+      alert("Something Went Wrong!")
+      closeModal();
+    }
+  }
   useEffect(() => {
     document.title = "Services - First Track Solution Technologies";
-}, []); 
+    getJoinUsRequestDetail();
+  }, []); 
+
+  
 
   const modalRef = useRef(null);
 
@@ -21,32 +97,37 @@ const Modal = ({ closeModal }) => {
     };
   }, []);
 
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    streetAddress: '',
-    city: '',
-    state:'',
-    postalCode: '',
-    description: '',
-    qualification: '12th',
-    tenthDocument:null,
-    twelfthDocument:null,
-    graduationDocument:null,
-    postGraduationDocument:null,
-    pan:null,
-    aadhar:null,
-    passbook:null,
-    letter:null,
-    salary:null,
-    photo:null,
-    resume:null       
-    });
+  
+
+    useEffect(()=>{
+      console.log(formData.isPermanentAddressSame)
+      if (formData?.isPermanentAddressSame){
+        setFormData({...formData,
+          permanentAddressLandmark:formData.landmark,
+          permanentStreetAddress:formData.streetAddress,
+          permanentAddressCity:formData.city,
+          permanentAddressState:formData.state,
+          permanentAddresstPostalCode:formData.postalCode,
+          permanentAddressCountry:formData.country
+        })
+      } else {
+        setFormData({...formData,
+          permanentAddressLandmark:'',
+          permanentStreetAddress:'',
+          permanentAddressCity:'',
+          permanentAddressState:'',
+          permanentAddresstPostalCode:'',
+          permanentAddressCountry:'India'
+        })
+      }
+    },[formData?.isPermanentAddressSame])
   
     const handleChange = (e) => {
-      const { name, value } = e.target;
+      const { name, value, checked, type } = e.target;
+      if (type === 'checkbox') {
+        setFormData({ ...formData, [name]: checked });
+        return
+      }
       setFormData({
         ...formData,
         [name]: value
@@ -55,7 +136,7 @@ const Modal = ({ closeModal }) => {
   
     const handleFileChange = (e) => {
       const { name, files } = e.target; 
-      setFormData((prev)=>{
+      setFiles((prev)=>{
           return{
           ...prev,
           [name]: files[0]
@@ -65,37 +146,37 @@ const Modal = ({ closeModal }) => {
   
     const handleSubmit = async (e) => {
       e.preventDefault();
-      let docsName = ['tenthDocument', 'twelfthDocument', 'graduationDocument', 'postGraduationDocument', 'pan', 'aadhar', 'passbook', 'letter', 'salary', 'photo', 'resume']
+      let docsName = ['tenthDocument', 'twelfthDocument', 'graduationDocument', 'postGraduationDocument', 'panDoc', 'aadhaarDoc', 'passbook', 'letter', 'salary', 'photo']
       let docs = {
         tenthDocument : '',
         twelfthDocument : '',
         graduationDocument : '',
         postGraduationDocument : '',
-        pan : '',
-        aadhar : '',
+        panDoc : '',
+        aadhaarDoc : '',
         passbook : '',
         letter : '',
         salary : '',
-        photo : '',
-        resume : ''
+        photo : ''
       }
       
       const reqUUID = uuidv4();
       try {
+        setLoadingState("Uploading Files...");
         // Create array of upload promises
         const uploadPromises = docsName.map(async (key) => {
-          if (!formData[key]) return; // Skip if no file
+          if (!files[key]) return; // Skip if no file
 
           docs[key] = `joiningForm/${reqUUID}/${uuidv4()}`;
           
           // Get signed URL
-          const response = await fetch('/.netlify/functions/getPutSignedUrl', {
+          const response = await fetch(`${BACKEND_URL}/hrms-s3/putUrl`, {
             method: 'POST',
             headers: {
               'Accept': 'application/json',
               'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ key: docs[key], filetype: formData[key]?.type })
+            body: JSON.stringify({ filename: docs[key], filetype: files[key]?.type, isPublic: true})
           });
           
           const { uploadURL } = await response.json();
@@ -104,31 +185,40 @@ const Modal = ({ closeModal }) => {
           return fetch(uploadURL, {
             method: "PUT",
             headers: {
-              'Content-Type': formData[key]?.type
+              'Content-Type': files[key]?.type
             },
-            body: formData[key]
+            body: files[key]
           });
         });
 
         // Wait for all uploads to complete in parallel
         await Promise.all(uploadPromises);
 
+        setLoadingState("Submitting Form...");
         // Send email notification
-        const emailResponse = await fetch("/.netlify/functions/joinMail", {
+        const emailResponse = await fetch(`${BACKEND_URL}/email/join`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'Accept': 'application/json'
+            'Accept': 'application/json',
+            'Authorization': localStorage.getItem('joinUsToken')
           },
           body: JSON.stringify({ formData, docs }),
         });
         
         const result = await emailResponse.json();
-        alert(result.message);
+        
+        if (result.success) {
+          alert(result.message || 'Form submitted successfully!');
+        } else{
+          alert(result.message || 'Error submitting form.');
+        }
 
       } catch (error) {
-        alert("Error submitting form. Please try again.");
+        alert("Something went wrong. Please try again.");
         console.error(error);
+      } finally {
+        setLoadingState(null);
       }
     };
 
@@ -146,7 +236,7 @@ const Modal = ({ closeModal }) => {
         <h2 className="text-lg mb-4">Please let us know Your preferred time</h2>
         <form onSubmit={handleSubmit} className=" font-normal space-y-6">
         {/* Name Fields */}
-        <div className="md:flex md:space-x-4 mt-3">
+        <div className="md:flex md:space-x-4 md:space-y-0 space-y-4 space-x-0 mt-3">
           <div className="flex-1">
             <label htmlFor="firstName" className="  text-neutral-500 text-sm">
               First Name <span className='text-red-500'>*</span>
@@ -155,6 +245,7 @@ const Modal = ({ closeModal }) => {
               type="text"
               id="firstName"
               name="firstName"
+              disabled
               placeholder='Eg: John'
               value={formData.firstName}
               onChange={handleChange}
@@ -170,8 +261,42 @@ const Modal = ({ closeModal }) => {
               type="text"
               id="lastName"
               name="lastName"
+              disabled
               placeholder='Eg: Doe'
               value={formData.lastName}
+              onChange={handleChange}
+              className="mt-1 focus:outline-none w-full text-sm border-gray-700 border bg-neutral-100 h-8 shadow-md p-1 "
+              required
+            />
+          </div>
+        </div>
+
+        <div className="md:flex md:space-x-4 md:space-y-0 space-y-4 space-x-0 mt-3">
+        <div className="flex-1">
+            <label htmlFor="fathersName" className="  text-neutral-500 text-sm">
+              Father's Name <span className='text-red-500'>*</span>
+            </label>
+            <input
+              type="text"
+              id="fathersName"
+              name="fathersName"
+              placeholder='Eg: Steve'
+              value={formData.fathersName}
+              onChange={handleChange}
+              className="mt-1 focus:outline-none w-full text-sm border border-gray-600 shadow-md bg-neutral-100 h-8 p-1"
+              required
+            />
+          </div>
+          <div className="flex-1">
+            <label htmlFor="mothersName" className=" text-neutral-500 text-sm">
+              Mother's Name <span className='text-red-500'>*</span>
+            </label>
+            <input
+              type="text"
+              id="mothersName"
+              name="mothersName"
+              placeholder='Eg: Alex'
+              value={formData.mothersName}
               onChange={handleChange}
               className="mt-1 focus:outline-none w-full text-sm border-gray-700 border bg-neutral-100 h-8 shadow-md p-1 "
               required
@@ -189,6 +314,7 @@ const Modal = ({ closeModal }) => {
               type="email"
               id="email"
               name="email"
+              disabled
               placeholder='Eg: john@doe.com'
               value={formData.email}
               onChange={handleChange}
@@ -196,6 +322,7 @@ const Modal = ({ closeModal }) => {
               required
             />
           </div>
+          <div className="md:flex md:space-x-4 md:space-y-0 space-y-4 space-x-0 mt-3">
           <div className="flex-1">
             <label htmlFor="phone" className=" text-neutral-500 text-sm">
               Phone <span className='text-red-500'>*</span>
@@ -204,6 +331,7 @@ const Modal = ({ closeModal }) => {
               type="tel"
               id="phone"
               name="phone"
+              disabled
               placeholder='Eg: 9542775289'
               value={formData.phone}
               onChange={handleChange}
@@ -211,9 +339,152 @@ const Modal = ({ closeModal }) => {
               required
             />
           </div>
+          <div className="flex-1">
+            <label htmlFor="phone" className=" text-neutral-500 text-sm">
+              Date of Birth <span className='text-red-500'>*</span>
+            </label>
+            <input
+              type="date"
+              id="dob"
+              name="dob"
+              placeholder='Eg: 9542775289'
+              value={formData.dob}
+              onChange={handleChange}
+              className="mt-1 focus:outline-none border text-sm w-full border-gray-700 bg-neutral-100 h-8 shadow-md p-1"
+              required
+            />
+          </div>
+          </div>
 
+          <div className="md:flex md:space-x-4 md:space-y-0 space-y-4 space-x-0 mt-3">
+          <div className="flex-1">
+            <label htmlFor="maritalStatus" className=" text-neutral-500 text-sm">
+              Marital Status <span className='text-red-500'>*</span>
+            </label>
+            <select
+              id="maritalStatus"
+              name="maritalStatus" 
+              onChange={handleChange}
+              value={formData.maritalStatus}
+              className="mt-1 text-sm focus:outline-none block w-full p-1 border text-neutral-500 border-gray-700 bg-neutral-100 h-8 ">
+              
+                <option value="Single">Single</option>
+                <option value="Married">Married</option>
+             
+            </select>
+            
+            
+          </div>
+
+          <div className="flex-1">
+            <label htmlFor="bloodGroup" className=" text-neutral-500 text-sm">
+              Blood Group <span className='text-red-500'>*</span>
+            </label>
+            <select
+              id="bloodGroup"
+              name="bloodGroup" 
+              onChange={handleChange}
+              value={formData.bloodGroup}
+              className="mt-1 text-sm focus:outline-none block w-full p-1 border text-neutral-500 border-gray-700 bg-neutral-100 h-8 ">
+              
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O+</option>
+
+             
+            </select>
+            
+            
+          </div>
+          </div>
+
+          <div className="md:flex md:space-x-4 md:space-y-0 space-y-4 space-x-0 mt-3">
+          <div className="flex-1">
+            <label htmlFor="age" className="  text-neutral-500 text-sm">
+              Age <span className='text-red-500'>*</span>
+            </label>
+            <input
+              type="text"
+              id="age"
+              name="age"
+              placeholder='Eg: 25'
+              value={formData.age}
+              onChange={handleChange}
+              className="mt-1 focus:outline-none w-full text-sm border border-gray-600 shadow-md bg-neutral-100 h-8 p-1"
+              required
+            />
+          </div>
+          <div className="flex-1">
+            <label htmlFor="gender" className=" text-neutral-500 text-sm">
+              Gender <span className='text-red-500'>*</span>
+            </label>
+            <select
+              id="gender"
+              name="gender" 
+              onChange={handleChange}
+              value={formData.gender}
+              className="mt-1 text-sm focus:outline-none block w-full p-1 border text-neutral-500 border-gray-700 bg-neutral-100 h-8 ">
+              
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+             
+            </select>
+            
+            
+          </div>
+        </div>
+          <div className="flex-1">
+            <label htmlFor="aadhaar" className=" text-neutral-500 text-sm">
+              Aadhaar <span className='text-red-500'>*</span>
+            </label>
+            <input
+              type="text"
+              id="aadhaar"
+              name="aadhaar"
+              placeholder='123412341234'
+              value={formData.aadhaar}
+              onChange={handleChange}
+              className="mt-1 focus:outline-none border text-sm w-full border-gray-700 bg-neutral-100 h-8 shadow-md p-1"
+              required
+            />
+          </div>
+          <div className="flex-1">
+            <label htmlFor="pan" className=" text-neutral-500 text-sm">
+              Pan <span className='text-red-500'>*</span>
+            </label>
+            <input
+              type="text"
+              id="pan"
+              name="pan"
+              placeholder='ABCDE1234F'
+              value={formData.pan}
+              onChange={handleChange}
+              className="mt-1 focus:outline-none border text-sm w-full border-gray-700 bg-neutral-100 h-8 shadow-md p-1"
+              required
+            />
+          </div>
           {/* Address Fields */}
-        
+          <p>Current Address: </p>
+          <div className="flex-1">
+            <label htmlFor="landmark" className=" text-neutral-500 text-sm">
+              Landmark <span className='text-red-500'>*</span>
+            </label>
+            <input
+              type="text"
+              id="landmark"
+              name="landmark"
+              placeholder='Eg: Near ABC building'
+              value={formData.landmark}
+              onChange={handleChange}
+              className="mt-1 text-sm focus:outline-none border w-full border-gray-700 bg-neutral-100 h-8 shadow-md p-1"
+              required
+            />
+          </div>
           <div className="flex-1">
             <label htmlFor="streetAddress" className=" text-neutral-500 text-sm">
               Street Address <span className='text-red-500'>*</span>
@@ -229,7 +500,7 @@ const Modal = ({ closeModal }) => {
               required
             />
           </div>
-          <div className="md:flex md:space-x-4">
+          <div className="md:flex md:space-x-4 md:space-y-0 space-y-4 space-x-0 mt-3">
           <div className="flex-1">
             <label htmlFor="city" className=" text-neutral-500 text-sm">
               City <span className='text-red-500'>*</span>
@@ -261,6 +532,23 @@ const Modal = ({ closeModal }) => {
             />
           </div>
           </div>
+          <div className="md:flex md:space-x-4 md:space-y-0 space-y-4 space-x-0 mt-3">
+          <div className="flex-1">
+            <label htmlFor="country" className=" text-neutral-500 text-sm">
+              Country <span className='text-red-500'>*</span>
+            </label>
+            <input
+              type="text"
+              id="country"
+              name="country"
+              disabled
+              placeholder='Eg: 2000'
+              value={formData.country}
+              onChange={handleChange}
+              className="mt-1 text-sm focus:outline-none border w-full border-gray-700 bg-neutral-100 h-8 shadow-md p-1 "
+              required
+            />
+          </div>
           <div className="flex-1">
             <label htmlFor="postalCode" className=" text-neutral-500 text-sm">
               Postal Code <span className='text-red-500'>*</span>
@@ -276,6 +564,124 @@ const Modal = ({ closeModal }) => {
               required
             />
           </div>
+          </div>
+
+          <div className="flex-1 flex ">
+            <label htmlFor="isPermanentAddressSame" className=" text-neutral-500 text-sm">
+              Current Address same as Permanent Address <span className='text-red-500'>*</span>
+            </label>
+            <input
+              type="checkbox"
+              id="isPermanentAddressSame"
+              name="isPermanentAddressSame"
+              checked={formData.isPermanentAddressSame}
+              onChange={handleChange}
+              className=""
+              required
+            />
+          </div>
+
+          {!formData.isPermanentAddressSame ?
+            <>
+          <p>Permanent Address:</p>
+          <div className="flex-1">
+            <label htmlFor="permanentAddressLandmark" className=" text-neutral-500 text-sm">
+              Landmark <span className='text-red-500'>*</span>
+            </label>
+            <input
+              type="text"
+              id="permanentAddressLandmark"
+              name="permanentAddressLandmark"
+              placeholder='Eg: Near ABC building'
+              value={formData.permanentAddressLandmark}
+              onChange={handleChange}
+              className="mt-1 text-sm focus:outline-none border w-full border-gray-700 bg-neutral-100 h-8 shadow-md p-1"
+              required
+            />
+          </div>
+          <div className="flex-1">
+            <label htmlFor="permanentStreetAddress" className=" text-neutral-500 text-sm">
+              Street Address <span className='text-red-500'>*</span>
+            </label>
+            <input
+              type="text"
+              id="permanentStreetAddress"
+              name="permanentStreetAddress"
+              placeholder='Eg: 24 Wallaby Way'
+              value={formData.permanentStreetAddress}
+              onChange={handleChange}
+              className="mt-1 text-sm focus:outline-none border w-full border-gray-700 bg-neutral-100 h-8 shadow-md p-1"
+              required
+            />
+          </div>
+          <div className="md:flex md:space-x-4 md:space-y-0 space-y-4 space-x-0 mt-3">
+          <div className="flex-1">
+            <label htmlFor="permanentAddressCity" className=" text-neutral-500 text-sm">
+              City <span className='text-red-500'>*</span>
+            </label>
+            <input
+              type="text"
+              id="permanentAddressCity"
+              name="permanentAddressCity"
+              placeholder='Eg: Sydney'
+              value={formData.permanentAddressCity}
+              onChange={handleChange}
+              className="mt-1  text-sm focus:outline-none border w-full border-gray-700 bg-neutral-100 h-8 shadow-md p-1 "
+              required
+            />
+          </div>
+          <div className="flex-1">
+            <label htmlFor="permanentAddressState" className=" text-neutral-500 text-sm">
+              State <span className='text-red-500'>*</span>
+            </label>
+            <input
+              type="text"
+              id="permanentAddressState"
+              name="permanentAddressState"
+              placeholder='Eg: New South Wales'
+              value={formData.permanentAddressState}
+              onChange={handleChange}
+              className="mt-1 text-sm focus:outline-none border w-full border-gray-700 bg-neutral-100 h-8 shadow-md p-1 "
+              required
+            />
+          </div>
+          </div>
+          <div className="md:flex md:space-x-4 md:space-y-0 space-y-4 space-x-0 mt-3">
+          <div className="flex-1">
+            <label htmlFor="permanentAddressCountry" className=" text-neutral-500 text-sm">
+              Country <span className='text-red-500'>*</span>
+            </label>
+            <input
+              type="text"
+              id="permanentAddressCountry"
+              name="permanentAddressCountry"
+              disabled
+              placeholder='Eg: 2000'
+              value={formData.permanentAddressCountry}
+              onChange={handleChange}
+              className="mt-1 text-sm focus:outline-none border w-full border-gray-700 bg-neutral-100 h-8 shadow-md p-1 "
+              required
+            />
+          </div>
+          <div className="flex-1">
+            <label htmlFor="permanentAddresstPostalCode" className=" text-neutral-500 text-sm">
+              Postal Code <span className='text-red-500'>*</span>
+            </label>
+            <input
+              type="text"
+              id="permanentAddresstPostalCode"
+              name="permanentAddresstPostalCode"
+              placeholder='Eg: 2000'
+              value={formData.permanentAddresstPostalCode}
+              onChange={handleChange}
+              className="mt-1 text-sm focus:outline-none border w-full border-gray-700 bg-neutral-100 h-8 shadow-md p-1 "
+              required
+            />
+          </div>
+          </div>
+          </> : null
+          }
+
           <div className="flex-1">
             <label htmlFor="qualification" className=" text-neutral-500 text-sm">
               Qualification <span className='text-red-500'>*</span>
@@ -312,6 +718,7 @@ const Modal = ({ closeModal }) => {
             type="file"
             id="tenthDocument"
             name='tenthDocument'
+            accept='.pdf'
             required
             onChange={handleFileChange}
             className="w-full p-2 file:text-xs text-xs border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -325,6 +732,7 @@ const Modal = ({ closeModal }) => {
             type="file"
             id="twelfthDocument"
             name='twelfthDocument'
+            accept='.pdf'
             required
             onChange={handleFileChange}
             className="w-full p-2 file:text-xs text-xs border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -338,7 +746,7 @@ const Modal = ({ closeModal }) => {
             type="file"
             id="graduationDocument"
             name='graduationDocument'
-          
+            accept='.pdf'
             onChange={handleFileChange}
             className="w-full p-2 file:text-xs text-xs border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
@@ -351,38 +759,41 @@ const Modal = ({ closeModal }) => {
             type="file"
             id="postGraduationDocument"
             name='postGraduationDocument'
+            accept='.pdf'
             onChange={handleFileChange}
             className="w-full p-2 file:text-xs text-xs border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm mb-2" htmlFor="postGraduationDocument">
+          <label className="block text-gray-700 text-sm mb-2" htmlFor="panDoc">
             PAN Card <span className='text-red-500'>*</span>
           </label>
           <input
             type="file"
-            id="pan"
+            id="panDoc"
             required
-            name='pan'
+            name='panDoc'
+            accept='.pdf'
             onChange={handleFileChange}
             className="w-full p-2 file:text-xs text-xs border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm mb-2" htmlFor="postGraduationDocument">
-            Aadhar Card <span className='text-red-500'>*</span>
+          <label className="block text-gray-700 text-sm mb-2" htmlFor="aadhaarDoc">
+            Aadhaar Card <span className='text-red-500'>*</span>
           </label>
           <input
             type="file"
-            id="aadhar"
-            name='aadhar'
+            id="aadhaarDoc"
+            name='aadhaarDoc'
+            accept='.pdf'
             required
             onChange={handleFileChange}
             className="w-full p-2 file:text-xs text-xs border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm mb-2" htmlFor="postGraduationDocument">
+          <label className="block text-gray-700 text-sm mb-2" htmlFor="passbook">
             Bank Passbook <span className='text-red-500'>*</span>
           </label>
           <input
@@ -390,83 +801,60 @@ const Modal = ({ closeModal }) => {
             id="passbook"
             required
             name='passbook'
+            accept='.pdf'
             onChange={handleFileChange}
             className="w-full p-2 file:text-xs text-xs border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm mb-2" htmlFor="postGraduationDocument">
+          <label className="block text-gray-700 text-sm mb-2" htmlFor="letter">
            If any experience-Offer Letter/Relieving letter/Experience Certificate
           </label>
           <input
             type="file"
             id="letter"
             name='letter'
+            accept='.pdf'
             onChange={handleFileChange}
             className="w-full p-2 file:text-xs text-xs border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm mb-2" htmlFor="postGraduationDocument">
+          <label className="block text-gray-700 text-sm mb-2" htmlFor="salary">
             Latest Salary Slip-3 Months
           </label>
           <input
             type="file"
-            id="slary"
+            id="salary"
             name='salary'
+            accept='.pdf'
             onChange={handleFileChange}
             className="w-full p-2 file:text-xs text-xs border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm mb-2" htmlFor="postGraduationDocument">
+          <label className="block text-gray-700 text-sm mb-2" htmlFor="photo">
             Photo <span className='text-red-500'>*</span>
           </label>
           <input
             type="file"
             id="photo"
             name='photo'
+            accept='.jpg,.jpeg,.png'
             required
             onChange={handleFileChange}
             className="w-full p-2 file:text-xs text-xs border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 text-sm mb-2" htmlFor="postGraduationDocument">
-            Resume <span className='text-red-500'>*</span>
-          </label>
-          <input
-            type="file"
-            id="resume"
-            name="resume"
-            required
-            onChange={handleFileChange}
-            className="w-full p-2 file:text-xs text-xs border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </div>
-        </div>
-
-       {/* Description */}
-       <div>
-          <label htmlFor="description" className=" text-neutral-500 text-sm">
-            Post Applied For
-          </label>
-          <textarea
-            id="description"
-            name="description"
-            value={formData.description}
-            onChange={handleChange}
-            rows="4"
-            className="mt-1 focus:outline-none border text-sm w-full border-gray-700 bg-neutral-100 h-20 shadow-md p-1 "
-          />
         </div>
         {/* Submit Button */}
         <div>
           <button
             type="submit"
-            className="inline-flexjustify-center py-2 px-4 border border-transparent text-sm text-white  bg-sky-500"
+            disabled={loadingState !== null}
+            className="inline-flexjustify-center py-2 px-4 border border-transparent text-sm text-white bg-sky-500 disabled:bg-sky-300 disabled:cursor-not-allowed"
           >
-            Submit
+            {loadingState || 'Submit'}
           </button>
         </div>
       </form>

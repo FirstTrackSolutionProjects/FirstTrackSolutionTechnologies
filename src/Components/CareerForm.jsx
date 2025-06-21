@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { countries } from 'countries-list';
 import {v4 as uuidv4} from 'uuid'
+
+const BACKEND_URL = import.meta.env.VITE_APP_BACKEND_URL;
 const CareerForm = () => {
   const [submitting, setSubmitting] = useState(false);
+  const [loadingState, setLoadingState] = useState(null);
   const countryList = Object.values(countries);
   const [formData, setFormData] = useState({
     firstName: '',
@@ -40,17 +43,18 @@ const CareerForm = () => {
     e.preventDefault();
     setSubmitting(true);
     try {
+      setLoadingState("Uploading Files...");
       const reqUUID = uuidv4();
       const cvKey = `careerForm/${reqUUID}/${uuidv4()}`;
       
       // Get signed URL for CV
-      const response = await fetch('/.netlify/functions/getPutSignedUrl', {
+      const response = await fetch(`${BACKEND_URL}/s3/putUrl`, {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ key: cvKey, filetype: formData.cv.type })
+        body: JSON.stringify({ filename: cvKey, filetype: formData.cv.type, isPublic: true })
       });
       
       const { uploadURL } = await response.json();
@@ -64,8 +68,9 @@ const CareerForm = () => {
         body: formData.cv,
       });
 
+      setLoadingState("Submitting Form...");
       // Send email notification
-      const emailResponse = await fetch("/.netlify/functions/careerMail", {
+      const emailResponse = await fetch(`${BACKEND_URL}/email/career`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -80,6 +85,7 @@ const CareerForm = () => {
       alert("Error submitting form. Please try again.");
       console.error(error);
     } finally {
+      setLoadingState(null);
       setSubmitting(false);
     }
   };
@@ -487,10 +493,10 @@ const CareerForm = () => {
         <div>
           <button
             type="submit"
-            disabled={submitting}
-            className="inline-flex justify-center py-2 px-4 border border-transparent text-sm rounded-md text-white font-bold bg-cyan-500"
+            disabled={loadingState !== null}
+            className="inline-flex justify-center py-2 px-4 border border-transparent text-sm rounded-md text-white font-bold bg-cyan-500 disabled:bg-cyan-300 disabled:cursor-not-allowed"
           >
-            {submitting?'Submitting...':'Submit'}
+            {loadingState || 'Submit'}
           </button>
         </div>
       </form>
