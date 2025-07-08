@@ -12,6 +12,9 @@ const Modal = ({ closeModal }) => {
     phone: '',
     fathersName: '',
     mothersName: '',
+    guardianName: '',
+    guardianRelation: '',
+    parentsGuardianMobile: '',
     landmark: '',
     streetAddress: '',
     city: '',
@@ -303,6 +306,81 @@ const Modal = ({ closeModal }) => {
             />
           </div>
         </div>
+        
+
+        <div className="md:flex md:space-x-4 md:space-y-0 space-y-4 space-x-0 mt-3">
+        <div className="flex-1">
+            <label htmlFor="guardianName" className="  text-neutral-500 text-sm">
+              Guardian Name
+            </label>
+            <input
+              type="text"
+              id="guardianName"
+              name="guardianName"
+              placeholder='Eg: Steve'
+              value={formData.guardianName}
+              onChange={handleChange}
+              className="mt-1 focus:outline-none w-full text-sm border border-gray-600 shadow-md bg-neutral-100 h-8 p-1"
+            />
+          </div>
+        </div>
+
+        <div className="md:flex md:space-x-4 md:space-y-0 space-y-4 space-x-0 mt-3">
+        <div className="flex-1">
+            <label htmlFor="guardianRelation" className=" text-neutral-500 text-sm">
+              Guardian Relation
+            </label>
+            <select
+              id="guardianRelation"
+              name="guardianRelation" 
+              onChange={handleChange}
+              value={formData.guardianRelation}
+              className="mt-1 text-sm focus:outline-none block w-full p-1 border text-neutral-500 border-gray-700 bg-neutral-100 h-8 ">
+                <option value="">Select</option>
+                <option value="Brother">Brother</option>
+                <option value="Sister">Sister</option>
+                <option value="Son">Son</option>
+                <option value="Daughter">Daughter</option>
+                <option value="Grandfather">Grandfather</option>
+                <option value="Grandmother">Grandmother</option>
+                <option value="Uncle">Uncle</option>
+                <option value="Aunt">Aunt</option>
+                <option value="Cousin">Cousin</option>
+                <option value="Nephew">Nephew</option>
+                <option value="Niece">Niece</option>
+                <option value="Father-in-law">Father-in-law</option>
+                <option value="Mother-in-law">Mother-in-law</option>
+                <option value="Brother-in-law">Brother-in-law</option>
+                <option value="Sister-in-law">Sister-in-law</option>
+                <option value="Son-in-law">Son-in-law</option>
+                <option value="Daughter-in-law">Daughter-in-law</option>
+                <option value="Spouse">Spouse</option>
+                <option value="Husband">Husband</option>
+                <option value="Wife">Wife</option>
+                <option value="Stepfather">Stepfather</option>
+                <option value="Stepmother">Stepmother</option>
+                <option value="Stepbrother">Stepbrother</option>
+                <option value="Stepsister">Stepsister</option>
+                <option value="Guardian">Guardian</option>
+                <option value="Other">Other</option>
+            </select>
+          </div>
+          <div className="flex-1">
+            <label htmlFor="parentsGuardianMobile" className="  text-neutral-500 text-sm">
+              Parents/Guardian Phone <span className='text-red-500'>*</span>
+            </label>
+            <input
+              type="text"
+              id="parentsGuardianMobile"
+              name="parentsGuardianMobile"
+              placeholder='Eg: 9876543210'
+              value={formData.parentsGuardianMobile}
+              onChange={handleChange}
+              className="mt-1 focus:outline-none w-full text-sm border border-gray-600 shadow-md bg-neutral-100 h-8 p-1"
+              required
+            />
+          </div>
+        </div>
 
         {/* Email and Phone Fields */}
         
@@ -365,6 +443,7 @@ const Modal = ({ closeModal }) => {
               id="maritalStatus"
               name="maritalStatus" 
               onChange={handleChange}
+              required
               value={formData.maritalStatus}
               className="mt-1 text-sm focus:outline-none block w-full p-1 border text-neutral-500 border-gray-700 bg-neutral-100 h-8 ">
               
@@ -383,6 +462,7 @@ const Modal = ({ closeModal }) => {
             <select
               id="bloodGroup"
               name="bloodGroup" 
+              required
               onChange={handleChange}
               value={formData.bloodGroup}
               className="mt-1 text-sm focus:outline-none block w-full p-1 border text-neutral-500 border-gray-700 bg-neutral-100 h-8 ">
@@ -428,6 +508,7 @@ const Modal = ({ closeModal }) => {
               name="gender" 
               onChange={handleChange}
               value={formData.gender}
+              required
               className="mt-1 text-sm focus:outline-none block w-full p-1 border text-neutral-500 border-gray-700 bg-neutral-100 h-8 ">
               
                 <option value="Male">Male</option>
@@ -656,7 +737,7 @@ const Modal = ({ closeModal }) => {
               id="permanentAddressCountry"
               name="permanentAddressCountry"
               disabled
-              placeholder='Eg: 2000'
+              placeholder='Eg: Australia'
               value={formData.permanentAddressCountry}
               onChange={handleChange}
               className="mt-1 text-sm focus:outline-none border w-full border-gray-700 bg-neutral-100 h-8 shadow-md p-1 "
@@ -671,7 +752,7 @@ const Modal = ({ closeModal }) => {
               type="text"
               id="permanentAddresstPostalCode"
               name="permanentAddresstPostalCode"
-              placeholder='Eg: 2000'
+              placeholder='Eg: 123456'
               value={formData.permanentAddresstPostalCode}
               onChange={handleChange}
               className="mt-1 text-sm focus:outline-none border w-full border-gray-700 bg-neutral-100 h-8 shadow-md p-1 "
