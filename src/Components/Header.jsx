@@ -102,7 +102,7 @@ const Header = () => {
 
       <Link to="/contact" className='text-black hover:underline hover:decoration-orange-500'>CONTACT US</Link>
             <Link to="/about" className='text-black hover:underline hover:decoration-orange-500'>ABOUT</Link>
-            <Link to="/login" className='text-black hover:underline hover:decoration-orange-500'>LOGIN</Link>
+            <a href="https://hrms.firsttracksolutiontechnologies.com/" target="_blank">HRMS</a>
       {isModalOpen && <Modal closeModal={handleModalToggle} />}
       </nav>
       <div className="md:hidden spaxe-x-10">
