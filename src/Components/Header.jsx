@@ -156,7 +156,7 @@ const Header = () => {
       </div>
 
       
-            <Link to="/login" className='text-black hover:underline hover:decoration-orange-500'>LOGIN</Link>
+            <a href="https://hrms.firsttracksolutiontechnologies.com/" target="_blank">HRMS</a>
       {isModalOpen && <Modal closeModal={handleModalToggle} />}
       </div>
       )}
