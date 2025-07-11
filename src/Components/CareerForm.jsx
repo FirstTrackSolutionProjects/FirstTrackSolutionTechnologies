@@ -14,6 +14,7 @@ const CareerForm = () => {
     phone: '',
     streetAddress: '',
     city: '',
+    state: '',
     postalCode: '',
     country: 'India',
     description: '',
@@ -48,7 +49,7 @@ const CareerForm = () => {
       const cvKey = `careerForm/${reqUUID}/${uuidv4()}`;
       
       // Get signed URL for CV
-      const response = await fetch(`${BACKEND_URL}/s3/putUrl`, {
+      const response = await fetch(`${BACKEND_URL}/hrms-s3/putUrl`, {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -192,8 +193,7 @@ const CareerForm = () => {
         </div>
 
         {/* Address Fields */}
-        <div className="md:flex md:space-x-4">
-          <div className="flex-1">
+        <div className="flex-1">
             <label htmlFor="streetAddress" className=" text-neutral-500 text-sm">
               Street Address <span className='text-red-500'>*</span>
             </label>
@@ -208,6 +208,7 @@ const CareerForm = () => {
               required
             />
           </div>
+        <div className="md:flex md:space-x-4">
           <div className="flex-1">
             <label htmlFor="city" className=" text-neutral-500 text-sm">
               City <span className='text-red-500'>*</span>
@@ -218,6 +219,21 @@ const CareerForm = () => {
               name="city"
               placeholder='Eg: Sydney'
               value={formData.city}
+              onChange={handleChange}
+              className="mt-1 focus:outline-none border w-full border-gray-700 bg-neutral-200 h-8 shadow-md p-1 "
+              required
+            />
+          </div>
+          <div className="flex-1">
+            <label htmlFor="city" className=" text-neutral-500 text-sm">
+              State <span className='text-red-500'>*</span>
+            </label>
+            <input
+              type="text"
+              id="state"
+              name="state"
+              placeholder='Eg: Sydney'
+              value={formData.state}
               onChange={handleChange}
               className="mt-1 focus:outline-none border w-full border-gray-700 bg-neutral-200 h-8 shadow-md p-1 "
               required
