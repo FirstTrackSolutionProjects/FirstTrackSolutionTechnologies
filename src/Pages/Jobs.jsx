@@ -4,7 +4,7 @@ import React from "react";
 const Jobs = () => {
   // Auto-redirect to external job portal when this page loads
   React.useEffect(() => {
-    window.location.href = "https://deploy-preview-4--ftst-job-consulting.netlify.app/jobs"; // 🔁 Replace with your real link
+    window.location.href = "https://deploy-preview-5--ftst-job-consulting.netlify.app/jobs"; // 🔁 Replace with your real link
   }, []);
 
   return (
