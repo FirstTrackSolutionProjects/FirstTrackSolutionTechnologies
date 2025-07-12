@@ -163,6 +163,16 @@ const Header = () => {
         CONSULTING
       </a>
 
+      <a
+        href="https://deploy-preview-4--ftst-job-consulting.netlify.app/loan" 
+        target="_blank"
+        rel="noopener noreferrer"
+        className='text-black hover:underline hover:decoration-orange-500'
+      >
+        FINTECH
+      </a>
+
+
 
       
             <a href="https://hrms.firsttracksolutiontechnologies.com/" target="_blank">HRMS</a>
