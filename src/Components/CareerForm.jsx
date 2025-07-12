@@ -429,6 +429,21 @@ const CareerForm = () => {
               IT Intern
               </label>
             </div>
+
+             <div className="flex items-center">
+              <input
+                type="radio"
+                id="uiintern"
+                name="course"
+                value="Ui Intern"
+                checked={formData.course === "Ui Intern"}
+                onChange={handleChange}
+                className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
+              />
+              <label htmlFor="masters" className="ml-3 block font-medium text-neutral-500 text-sm">
+              UI Intern
+              </label>
+            </div>
             <div className="flex items-center">
               <input
                 type="radio"
@@ -487,6 +502,145 @@ const CareerForm = () => {
               Corporate Relationship Manager [CRM]
               </label>
             </div>
+
+            <div className="flex items-center">
+              <input
+                type="radio"
+                id="frontenddeveloper"
+                name="course"
+                value="Frontend Developer"
+                checked={formData.course === "Frontend Developer"}
+                onChange={handleChange}
+                className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
+              />
+              <label htmlFor="masters" className="ml-3 block font-medium text-neutral-500 text-sm">
+              Frontend Developer
+              </label>
+            </div>
+
+            <div className="flex items-center">
+              <input
+                type="radio"
+                id="backenddeveloper"
+                name="course"
+                value="Backend Developer"
+                checked={formData.course === "Backend Developer"}
+                onChange={handleChange}
+                className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
+              />
+              <label htmlFor="masters" className="ml-3 block font-medium text-neutral-500 text-sm">
+              Backend Developer
+              </label>
+            </div>
+
+            <div className="flex items-center">
+              <input
+                type="radio"
+                id="ui/uxdeveloper"
+                name="course"
+                value="UI/UX Developer"
+                checked={formData.course === "UI/UX Developer"}
+                onChange={handleChange}
+                className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
+              />
+              <label htmlFor="masters" className="ml-3 block font-medium text-neutral-500 text-sm">
+              UI/UX Developer
+              </label>
+            </div>
+
+            <div className="flex items-center">
+              <input
+                type="radio"
+                id="fullstackdeveloper"
+                name="course"
+                value="Full Stack Developer"
+                checked={formData.course === "Full Stack Developer"}
+                onChange={handleChange}
+                className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
+              />
+              <label htmlFor="masters" className="ml-3 block font-medium text-neutral-500 text-sm">
+              Full Stack Developer
+              </label>
+            </div>
+
+            <div className="flex items-center">
+              <input
+                type="radio"
+                id="breactnativedeveloper"
+                name="course"
+                value="React Native Developer"
+                checked={formData.course === "React Native Developer"}
+                onChange={handleChange}
+                className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
+              />
+              <label htmlFor="masters" className="ml-3 block font-medium text-neutral-500 text-sm">
+              React Native Developer
+              </label>
+            </div>
+
+           
+
+            <div className="flex items-center">
+              <input
+                type="radio"
+                id="hrexecutive"
+                name="course"
+                value="HR EXecutive"
+                checked={formData.course === "HR EXecutive"}
+                onChange={handleChange}
+                className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
+              />
+              <label htmlFor="masters" className="ml-3 block font-medium text-neutral-500 text-sm">
+              HR EXecutive
+              </label>
+            </div>
+
+            <div className="flex items-center">
+              <input
+                type="radio"
+                id="graphicdesigner"
+                name="course"
+                value="Graphic Designer"
+                checked={formData.course === "Graphic Designer"}
+                onChange={handleChange}
+                className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
+              />
+              <label htmlFor="masters" className="ml-3 block font-medium text-neutral-500 text-sm">
+              Graphic Designer
+              </label>
+            </div>
+
+            <div className="flex items-center">
+              <input
+                type="radio"
+                id="hroperatinmanager"
+                name="course"
+                value="HR Operation Manager"
+                checked={formData.course === "HR Operation Manager"}
+                onChange={handleChange}
+                className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
+              />
+              <label htmlFor="masters" className="ml-3 block font-medium text-neutral-500 text-sm">
+              HR Operation Manager
+              </label>
+            </div>
+
+            <div className="flex items-center">
+              <input
+                type="radio"
+                id="digitalmarketingexecutive"
+                name="course"
+                value="Digital Marketing Executive"
+                checked={formData.course === "Digital Marketing Executive"}
+                onChange={handleChange}
+                className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
+              />
+              <label htmlFor="masters" className="ml-3 block font-medium text-neutral-500 text-sm">
+              Digital Marketing Executive
+              </label>
+            </div>
+
+
 
           </div>
         </fieldset>

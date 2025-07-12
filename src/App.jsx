@@ -13,7 +13,7 @@ import WhatsAppChatPopup from './Components/WhatsAppChatPopup'
 import Infotech from './Pages/Infotech'
 import Finance from './Pages/Finance'
 import Training from './Pages/Training'
-import Recruitment from './Pages/Recruitment'
+// import Recruitment from './Pages/Recruitment'
 import TermsOfUse from './Pages/TermsOfUse'
 import Ecom from './Pages/Ecom'
 import Openings from './Pages/Openings'
@@ -22,6 +22,7 @@ import SignupPage from './Pages/SignupPage'
 import PasswordProtectedPage from './Components/PasswordProtectedPage'
 import ForgotPasword from './Pages/ForgotPassword'
 import { ToastContainer } from 'react-toastify'
+import Jobs from './Pages/Jobs'
 
 
 function App() {
@@ -42,13 +43,14 @@ function App() {
         <Route path="/info" element={<Infotech/>}></Route>
         <Route path="/finance" element={< Finance/>}></Route>
         <Route path="/training" element={<Training/>}></Route>
-        <Route path="/recruit" element={<Recruitment/>}></Route>
+        {/* <Route path="/recruit" element={<Recruitment/>}></Route> */}
         <Route path="/terms" element={<TermsOfUse/>}></Route>
         <Route path="/ecom" element={<Ecom/>}></Route>
         <Route path="/login" element={<LoginPage/>}></Route>
         <Route path="/signup" element={<SignupPage/>}></Route>
         <Route path="/openings" element={<Openings/>}></Route>
         <Route path="/forgotpassword" element={<ForgotPasword/>}></Route>
+        <Route path="/jobs" element={<Jobs/>}></Route>
       </Routes>
       
       <Footer/>
