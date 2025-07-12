@@ -70,7 +70,7 @@ const Header = () => {
                 <Link to="/info" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Information Technology</Link>
                 {/*<Link to="/finance" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Financial Services</Link>*/}
                 <Link to="/training" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Training & Development</Link>
-                <Link to="/recruit" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Recruitment<br/>Job Portal</Link>
+                <Link to="/jobs" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Recruitment<br/>Job Portal</Link>
                 <a href='https://firsttrack.site/' target='_blank' className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Logistics</a>
             
             </div>
@@ -149,11 +149,20 @@ const Header = () => {
                 <Link to="/info" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Information Technology</Link>
                 {/*<Link to="/finance" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Financial Services</Link>*/}
                 <Link to="/training" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Training & Development</Link>
-                <Link to="/recruit" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Recruitment<br/>Job Portal</Link>
+                <Link to="/jobs" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Recruitment<br/>Job Portal</Link>
             
             </div>
         )}
       </div>
+      <a
+        href="https://deploy-preview-4--ftst-job-consulting.netlify.app" 
+        target="_blank"
+        rel="noopener noreferrer"
+        className='text-black hover:underline hover:decoration-orange-500'
+      >
+        CONSULTING
+      </a>
+
 
       
             <a href="https://hrms.firsttracksolutiontechnologies.com/" target="_blank">HRMS</a>
