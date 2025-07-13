@@ -155,7 +155,7 @@ const Header = () => {
         )}
       </div>
       <a
-        href="https://deploy-preview-4--ftst-job-consulting.netlify.app" 
+        href="https://ftst-job-consulting.netlify.app" 
         target="_blank"
         rel="noopener noreferrer"
         className='text-black hover:underline hover:decoration-orange-500'
@@ -164,7 +164,7 @@ const Header = () => {
       </a>
 
       <a
-        href="https://deploy-preview-4--ftst-job-consulting.netlify.app/loan" 
+        href="https://ftst-job-consulting.netlify.app/loan" 
         target="_blank"
         rel="noopener noreferrer"
         className='text-black hover:underline hover:decoration-orange-500'
