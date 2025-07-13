@@ -4,7 +4,7 @@ import React from "react";
 const Jobs = () => {
   
   React.useEffect(() => {
-    window.location.href = "https://deploy-preview-6--ftst-job-consulting.netlify.app/jobs"; // 🔁 Replace with your real link
+    window.location.href = "https://ftst-job-consulting.netlify.app/jobs"; // 🔁 Replace with your real link
   }, []);
 
   return (
