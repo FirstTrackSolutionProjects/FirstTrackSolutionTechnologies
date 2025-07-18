@@ -6,6 +6,8 @@ import ServicesLayout from '../Components/ServicesLayout';
 import ProgressBar from '../Components/ProgressBar';
 import AnalysisForm from '../Components/AnalysisForm';
 import TrustedPartners from '../Components/TrustedPartners';
+import StartupIndia from '../Components/StartupIndia';
+import ISO from '../Components/ISO';
 
 const HomePage = () => {
     useEffect(() => {
@@ -191,7 +193,11 @@ const HomePage = () => {
             <div className='text-center text-xl md:text-4xl mt-3 mb-6 font-bold text-white'>Our Trusted Partners</div>
             <TrustedPartners/>
         </div>
-    
+        <div className='md:flex items-center justify-center my-10'>
+            <div className='md:w-[50%] mx-auto'><ISO /></div>
+            <div className='md:w-[50%] mx-auto'><StartupIndia /></div>
+        
+        </div>
     </div>
   );
 };
