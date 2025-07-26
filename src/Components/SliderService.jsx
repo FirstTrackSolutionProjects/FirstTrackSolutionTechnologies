@@ -14,6 +14,9 @@ const SliderService = () => {
    
   ];
 
+   
+
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
