@@ -72,10 +72,37 @@ const Header = () => {
                 <Link to="/training" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Training & Development</Link>
                 <Link to="/jobs" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Recruitment<br/>Job Portal</Link>
                 <a href='https://firsttrack.site/' target='_blank' className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Logistics</a>
-            
             </div>
         )}
       </div>
+
+       <a
+        href="https://fts.firsttracksolutiontechnologies.com/" 
+        target="_blank"
+        rel="noopener noreferrer"
+        className='text-black hover:underline hover:decoration-orange-500'
+      >
+        CONSULTING
+      </a>
+
+      <a
+        href="https://fts.firsttracksolutiontechnologies.com/loan" 
+        target="_blank"
+        rel="noopener noreferrer"
+        className='text-black hover:underline hover:decoration-orange-500'
+      >
+        FINTECH
+      </a>
+
+      <a
+        href="https://fts.firsttracksolutiontechnologies.com/partner" 
+        target="_blank"
+        rel="noopener noreferrer"
+        className='text-black hover:underline hover:decoration-orange-500'
+      >
+        PARTNER
+      </a>
+      
 
       <div className="relative z-20" ref={careerDropdownRef} onMouseEnter={handleCareerMouseEnter}>
       <Link to="/career"><div className="text-black hover:underline hover:decoration-orange-500">
@@ -159,12 +186,12 @@ const Header = () => {
         target="_blank"
         rel="noopener noreferrer"
         className='text-black hover:underline hover:decoration-orange-500'
-      >
+      >      
         CONSULTING
       </a>
 
       <a
-        href="https://ftst-job-consulting.netlify.app/loan" 
+        href="https://fts.firsttracksolutiontechnologies.com/loan" 
         target="_blank"
         rel="noopener noreferrer"
         className='text-black hover:underline hover:decoration-orange-500'
@@ -172,10 +199,17 @@ const Header = () => {
         FINTECH
       </a>
 
-
+      <a
+        href="https://fts.firsttracksolutiontechnologies.com/partner" 
+        target="_blank"
+        rel="noopener noreferrer"
+        className='text-black hover:underline hover:decoration-orange-500'
+      >
+        PARTNER
+      </a>
 
       
-            <a href="https://hrms.firsttracksolutiontechnologies.com/" target="_blank" className='text-center'>EMPLOYEE<br/>LOGIN</a>
+        <a href="https://hrms.firsttracksolutiontechnologies.com/" target="_blank" className='text-center'>EMPLOYEE<br/>LOGIN</a>
       {isModalOpen && <Modal closeModal={handleModalToggle} />}
       </div>
       )}
