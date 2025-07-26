@@ -77,7 +77,7 @@ const Header = () => {
       </div>
 
        <a
-        href="https://ftst-job-consulting.netlify.app" 
+        href="https://fts.firsttracksolutiontechnologies.com/" 
         target="_blank"
         rel="noopener noreferrer"
         className='text-black hover:underline hover:decoration-orange-500'
@@ -86,7 +86,7 @@ const Header = () => {
       </a>
 
       <a
-        href="https://ftst-job-consulting.netlify.app/loan" 
+        href="https://fts.firsttracksolutiontechnologies.com/loan" 
         target="_blank"
         rel="noopener noreferrer"
         className='text-black hover:underline hover:decoration-orange-500'
@@ -95,7 +95,7 @@ const Header = () => {
       </a>
 
       <a
-        href="https://ftst-job-consulting.netlify.app/partner" 
+        href="https://fts.firsttracksolutiontechnologies.com/partner" 
         target="_blank"
         rel="noopener noreferrer"
         className='text-black hover:underline hover:decoration-orange-500'
@@ -182,7 +182,7 @@ const Header = () => {
         )}
       </div>
       <a
-        href="https://ftst-job-consulting.netlify.app" 
+        href="https://fts.firsttracksolutiontechnologies.com/" 
         target="_blank"
         rel="noopener noreferrer"
         className='text-black hover:underline hover:decoration-orange-500'
@@ -191,7 +191,7 @@ const Header = () => {
       </a>
 
       <a
-        href="https://ftst-job-consulting.netlify.app/loan" 
+        href="https://fts.firsttracksolutiontechnologies.com/loan" 
         target="_blank"
         rel="noopener noreferrer"
         className='text-black hover:underline hover:decoration-orange-500'
@@ -200,7 +200,7 @@ const Header = () => {
       </a>
 
       <a
-        href="https://ftst-job-consulting.netlify.app/partner" 
+        href="https://fts.firsttracksolutiontechnologies.com/partner" 
         target="_blank"
         rel="noopener noreferrer"
         className='text-black hover:underline hover:decoration-orange-500'
