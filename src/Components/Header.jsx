@@ -102,6 +102,7 @@ const Header = () => {
       >
         PARTNER
       </a>
+     
 
       <div className="relative z-20" ref={careerDropdownRef} onMouseEnter={handleCareerMouseEnter}>
       <Link to="/career"><div className="text-black hover:underline hover:decoration-orange-500">
