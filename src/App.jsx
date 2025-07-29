@@ -16,7 +16,7 @@ import Training from './Pages/Training'
 // import Recruitment from './Pages/Recruitment'
 import TermsOfUse from './Pages/TermsOfUse'
 import Ecom from './Pages/Ecom'
-import Openings from './Pages/Openings'
+
 import LoginPage from './Pages/LoginPage'
 import SignupPage from './Pages/SignupPage'
 import PasswordProtectedPage from './Components/PasswordProtectedPage'
@@ -48,7 +48,7 @@ function App() {
         <Route path="/ecom" element={<Ecom/>}></Route>
         <Route path="/login" element={<LoginPage/>}></Route>
         <Route path="/signup" element={<SignupPage/>}></Route>
-        <Route path="/openings" element={<Openings/>}></Route>
+      
         <Route path="/forgotpassword" element={<ForgotPasword/>}></Route>
         <Route path="/jobs" element={<Jobs/>}></Route>
       </Routes>

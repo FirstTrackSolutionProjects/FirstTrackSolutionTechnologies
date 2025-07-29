@@ -111,7 +111,15 @@ const Header = () => {
         {isCareerDropdownOpen && (
             
           <div className="absolute bg-gray-800 text-white  shadow-md rounded-md mt-2 w-48">
-            <Link to="/openings" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Current Openings</Link>
+            <a
+                href="https://fts.firsttracksolutiontechnologies.com/current-openings"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm"
+              >
+                Current Openings
+              </a>
+              
             <Link to="/joinus" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Join Us</Link>
             {/*<button
               onClick={() => {
@@ -150,7 +158,14 @@ const Header = () => {
         {isCareerDropdownOpen && (
             
           <div className="absolute bg-gray-800 text-white shadow-md rounded-md mt-2 w-48">
-            <Link to="/openings" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Current Openings</Link>
+             <a
+                href="https://fts.firsttracksolutiontechnologies.com/current-openings"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm"
+              >
+                Current Openings
+              </a>
             <Link to="/joinus" className="block px-4 py-2 hover:bg-orange-600 hover:text-white text-sm">Join Us</Link>
             {/*<button
               onClick={() => {
