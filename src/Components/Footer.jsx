@@ -66,17 +66,28 @@ const Footer =()=>{
                     <Link to="/services" onClick={scrollToTop}><div className="my-2 text-sm">Graphics Designing</div></Link>
                     <Link to="/services" onClick={scrollToTop}><div className="my-2 text-sm">Digital Marketing</div></Link>
                     <Link to="/services" onClick={scrollToTop}><div className="my-2 text-sm">Application Development</div></Link>
-                    <a href='https://firsttrack.site/' target='_blank' className="my-2 text-sm">Logistics</a>
+                    <a href='https://fts.firsttracksolutiontechnologies.com/' target='_blank' className="my-2 text-sm block">Consulting</a>
+                    <a href='https://firsttrack.site/' target='_blank' className="my-2 text-sm block">Logistics</a>
+                    <a href='https://fts.firsttracksolutiontechnologies.com/loan' target='_blank' className="my-2 text-sm">Fintech</a>
                 </div>
                 <div className="w-full h-full items-center justify-center my-auto p-7">
                     <div className="text-xl font-semibold mb-4">Quick Links</div>
                     <div><Link to='/career' onClick={scrollToTop} className="my-2 text-sm">Career</Link></div>
+                     <a
+                        href="https://fts.firsttracksolutiontechnologies.com/current-openings"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block py-1 hover:text-white text-sm"
+                    >
+                        Current Openings
+                    </a>
                     <div><Link to='/services' onClick={scrollToTop} className="my-2 text-sm">Services</Link></div>
-                    <div><Link to='/openings' onClick={scrollToTop} className="my-2 text-sm">Join Us</Link></div>
-                    <div><Link to='/joinus' onClick={scrollToTop} className="my-2 text-sm">New Employee On Boarding</Link></div>
+                    
+                    {/* <div><Link to='/openings' onClick={scrollToTop} className="my-2 text-sm">Join Us</Link></div> */}
+                    <div><Link to='/joinus' onClick={scrollToTop} className="my-2 text-sm">Join Us</Link></div>
                     <div><Link to='/blog' onClick={scrollToTop} className="my-2 text-sm">Blog</Link></div>
                     <div><Link to='/contact' onClick={scrollToTop} className="my-2 text-sm">Contact</Link></div>
-                    <div className="text-xl font-semibold mb-4">Follow Us:</div>
+                    <div className="text-xl font-semibold mb-4 mt-3">Follow Us:</div>
                     <div className="flex justify-evenly">
                         
                     <a href="https://www.facebook.com/people/Firsttrack-Solutiontechnologies/pfbid0wn8Bk27pnv2nDpGxJNg1vWLM1ssykjyHBtj4iiJWeaaTwkJz3QMYi7rUoEjutrrl/" target="_blank" rel="noopener noreferrer" >
