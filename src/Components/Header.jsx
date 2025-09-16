@@ -3,6 +3,7 @@ import Modal from './Modal';
 import { Link } from 'react-router-dom';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 
+
 const Header = () => {
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const [isCareerDropdownOpen, setIsCareerDropdownOpen] = useState(false);
@@ -56,6 +57,7 @@ const Header = () => {
 
   return (
     <div>
+   
     <header className="bg-neutral-200 font-inter shadow-lg w-full font-semibold text-black py-2 px-3 flex z-10 justify-between items-center">
     <div className='flex font-playfair items-center text-xs md:text-base  text-gray-800'><Link to="/" ><img src="images/logomain2.JPG" alt="logo" className='w-8 h-8 rounded-full object-cover md:w-12 md:h-12 mr-4'></img></Link>
         FIRST TRACK SOLUTION TECHNOLOGIES</div>
@@ -86,7 +88,7 @@ const Header = () => {
       </a>
 
       <a
-        href="https://fts.firsttracksolutiontechnologies.com/loan" 
+        href="https://fintech.firsttracksolutiontechnologies.com" 
         target="_blank"
         rel="noopener noreferrer"
         className='text-black hover:underline hover:decoration-orange-500'
@@ -206,7 +208,7 @@ const Header = () => {
       </a>
 
       <a
-        href="https://fts.firsttracksolutiontechnologies.com/loan" 
+        href="https://fintech.firsttracksolutiontechnologies.com" 
         target="_blank"
         rel="noopener noreferrer"
         className='text-black hover:underline hover:decoration-orange-500'
