@@ -15,7 +15,7 @@ const AboutSlider = () => {
   };
 
   return (
-    <div className="w-full max-w-xl mx-auto mt-10">
+    <div className="w-full max-w-6xl mx-auto mt-10">
       <Slider {...settings}>
       <div className="text-center font-inter">
                 <img src="images/sir.png" className="mx-auto w-60 h-60 border border-black  rounded-full object-contain"></img>
