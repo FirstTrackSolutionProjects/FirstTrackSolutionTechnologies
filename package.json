@@ -17,6 +17,7 @@
     "countries-list": "^3.1.0",
     "dotenv": "^16.5.0",
     "emailjs-com": "^3.2.0",
+    "framer-motion": "^12.38.0",
     "mysql2": "^3.14.1",
     "nodemailer": "^6.9.14",
     "postcss": "^8.4.39",

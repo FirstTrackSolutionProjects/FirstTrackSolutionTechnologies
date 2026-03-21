@@ -6,6 +6,8 @@ import ServicesLayout from '../Components/ServicesLayout';
 import ProgressBar from '../Components/ProgressBar';
 import AnalysisForm from '../Components/AnalysisForm';
 import TrustedPartners from '../Components/TrustedPartners';
+import OurClient from '../Components/OurClient';
+import Testimonials from '../Components/Testimonials';
 import StartupIndia from '../Components/StartupIndia';
 import ISO from '../Components/ISO';
 
@@ -189,10 +191,59 @@ const HomePage = () => {
             </div>
         </div>
 
-        <div className='w-full mx-auto font-inter py-2 md:py-5 bg-gradient-to-r from-black via-gray-500 to-slate-300'>
-            <div className='text-center text-xl md:text-4xl mt-3 mb-6 font-bold text-white'>Our Trusted Partners</div>
-            <TrustedPartners/>
+        {/* Trusted Partners */}
+        <div className="w-full font-inter py-12 md:py-16 bg-gradient-to-r from-black via-gray-500 to-slate-300">
+        <div className="max-w-6xl mx-auto px-4">
+            
+            <h2 className="text-center text-2xl md:text-4xl font-bold text-white mb-3">
+            Our Trusted Partners
+            </h2>
+
+            <div className="w-20 h-1 bg-orange-400 mx-auto mb-8 rounded"></div>
+
+            <div className="mt-6">
+            <TrustedPartners />
+            </div>
+
         </div>
+        </div>
+
+
+        {/* Clients */}
+        <div className="w-full font-inter py-12 md:py-16 bg-gradient-to-r from-gray-200 via-gray-300 to-gray-400 mt-6">
+        <div className="max-w-6xl mx-auto px-4">
+            
+            <h2 className="text-center text-2xl md:text-4xl font-bold text-black mb-3">
+            Our Clients
+            </h2>
+
+            <div className="w-20 h-1 bg-orange-400 mx-auto mb-8 rounded"></div>
+
+            <div className="mt-6">
+            <OurClient />
+            </div>
+        </div>
+        </div>
+
+
+        {/* Testimonials */}
+    <div className="w-full py-12 md:py-16 bg-gradient-to-r from-slate-500 via-gray-600 to-slate-900 mt-6">
+        <div className="max-w-5xl mx-auto px-4">
+            
+            <h2 className="text-center text-2xl md:text-4xl font-bold text-white mb-3">
+            Testimonials
+            </h2>
+
+            <div className="w-20 h-1 bg-orange-400 mx-auto mb-8 rounded"></div>
+
+            <div className="mt-6">
+            <Testimonials />
+            </div>
+
+        </div>
+        </div>
+        
+
         <div className='md:flex items-center justify-center my-10'>
             <div className='md:w-[50%] mx-auto'><ISO /></div>
             <div className='md:w-[50%] mx-auto'><StartupIndia /></div>
