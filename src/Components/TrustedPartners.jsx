@@ -3,54 +3,56 @@ import './trustedpartner.css';
 
 const TrustedPartners = () => {
   const images = [
-    'images/partners/zoho.jpeg',
-    'images/partners/razorpay.jpeg',
-    'images/partners/aws.jpg',
-    'images/partners/hdfc.png',
-    'images/partners/hostinger.png',
-    'images/partners/icici.png',
-    'images/partners/indFill.png',
-    'images/partners/paytm.png',
-    'images/partners/phonpe.jpg'
+    '/images/partners/zoho.jpeg',
+    '/images/partners/razorpay.jpeg',
+    '/images/partners/aws.jpg',
+    '/images/partners/hdfc.png',
+    '/images/partners/hostinger.png',
+    '/images/partners/icici.png',
+    '/images/partners/indFill.png',
+    '/images/partners/paytm.png',
+    '/images/partners/phonpe.jpg',
+    '/images/partners/netlify.png',
+    '/images/partners/cashfree.png',
+    '/images/partners/paypal.png'
+
   ];
   const sliderRef = useRef(null);
 
   useEffect(() => {
     const slider = sliderRef.current;
-    let intervalId;
+    let scrollAmount = 0;
 
-    const startAnimation = () => {
-      slider.style.animation = 'scroll 10s linear infinite';
+    const scroll = () => {
+      if (!slider) return;
+
+      scrollAmount += 1; // 🔥 speed control (increase/decrease)
+
+      if (scrollAmount >= slider.scrollWidth / 2) {
+        scrollAmount = 0; // reset for infinite loop
+      }
+
+      slider.style.transform = `translateX(-${scrollAmount}px)`;
+
+      requestAnimationFrame(scroll);
     };
 
-    const resetAnimation = () => {
-      slider.style.animation = 'none';
-      setTimeout(() => {
-        slider.style.animation = 'scroll 10s linear infinite';
-      }, 50);
-    };
-
-    slider.addEventListener('animationiteration', resetAnimation);
-    startAnimation();
-
-    return () => {
-      clearInterval(intervalId);
-      slider.removeEventListener('animationiteration', resetAnimation);
-    };
+    requestAnimationFrame(scroll);
   }, []);
 
   return (
-    
-    <div className="overflow-hidden whitespace-nowrap">
-    <div ref={sliderRef} className="flex">
-      {images.map((src, index) => (
-        <img key={index} src={src} alt={`Image ${index + 1}`} className="w-32 h-20 mx-3 md:w-52 md:h-32 md:mx-8 bg-white rounded-md p-2" />
-      ))}
-      {images.map((src, index) => (
-        <img key={index + images.length} src={src} alt={`Image ${index + 1}`} className="w-32 h-20 mx-3 md:w-52 md:h-32 md:mx-8 bg-white rounded-md p-2" />
-      ))}
+    <div className="overflow-hidden">
+      <div ref={sliderRef} className="flex w-max">
+        {[...images, ...images].map((src, index) => (
+          <img
+            key={index}
+            src={src}
+            alt={`logo-${index}`}
+            className="w-32 h-20 mx-3 md:w-52 md:h-32 md:mx-8 bg-white rounded-md p-2 flex-shrink-0"
+          />
+        ))}
+      </div>
     </div>
-  </div>
   );
 };
 
