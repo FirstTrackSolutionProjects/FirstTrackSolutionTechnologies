@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 const AboutSlider = () => {
   const settings = {
     dots: true,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -23,7 +23,7 @@ const AboutSlider = () => {
                 <div className="text-xl md:text-2xl font-semibold text-red-500 mt-8">Founder | CEO</div>
                 <div className="text-lg md:text-xl text-balance my-8 text-neutral-500">He is the founder of First Track Solution Technologies Private Limited and well established business person. He evokes the brightest minds to be told rising technologies.</div></div>
 
-            <div className="text-center font-inter">
+            {/* <div className="text-center font-inter">
                 <img src="images/about2.webp" className="mx-auto w-60 h-60 border border-black rounded-full object-cover"></img>
                 <div className="text-2xl md:text-3xl font-bold mt-8">Ms. Toral Barbhaya</div>
                 <div className="text-xl md:text-2xl font-semibold text-red-500 mt-8">Director | COO</div>
@@ -31,7 +31,7 @@ const AboutSlider = () => {
 transportation the spirit of innovation 
 and eventually guaranteeing the most 
 effective quality of package solutions for patrons..</div>
-            </div>
+            </div> */}
             {/*
             <div className="text-center font-inter">
                     <div className="text-2xl font-bold mb-5">MR.PRABHANJAN KU. PATTNAIK</div>
