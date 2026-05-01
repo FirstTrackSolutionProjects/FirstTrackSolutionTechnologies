@@ -26,6 +26,31 @@ const testimonialsData = [
     rating: 5,
     img: "/images/partners/shipwale.png",
   },
+   {
+    quote:
+      "Great product quality and timely delivery. Their support team is always responsive and helpful.",
+    name: "GlowIndia",
+    title: "Real Estate ",
+    rating: 4,
+    img: "/images/partners/glow india.jpg",
+  },
+  {
+    quote:
+      "Secure and seamless financial services. We trust their platform for all transactions.",
+    name: "YoursMoney",
+    title: "Fintech",
+    rating: 5,
+    img: "/images/partners/yoursmoney.png",
+  },
+  {
+    quote:
+      "Innovative tech solutions with excellent performance. Highly recommended for modern businesses.",
+    name: "TechMac",
+    title: "Infra & Construction",
+    rating: 5,
+    img: "/images/partners/techmac.png",
+  },
+
 ];
 
 const Testimonials = () => {

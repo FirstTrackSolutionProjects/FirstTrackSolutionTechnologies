@@ -7,8 +7,11 @@ const OurClients = () => {
     { name: "Jupiter Express", img: "/images/partners/jupiter.jpg" },
     { name: "7D Express", img: "/images/partners/7d.jpg" },
     { name: "Shipwale", img: "/images/partners/shipwale.png" },
-    { name: "Fuddlins", img: "/images/partners/fuddins.png" },
+    { name: "Fuddlins", img: "/images/partners/Fuddlins.jpeg" },
     { name: "FirstTrack", img: "/images/partners/FirstTrack.png" },
+    { name: "GlowIndia", img: "/images/partners/glow india.jpg" },
+    { name: "YoursMoney", img: "/images/partners/yoursmoney.png" },
+    { name: "TechMac", img: "/images/partners/techmac.png" },
   ];
 
   const [isDragging, setIsDragging] = useState(false);
@@ -22,7 +25,7 @@ const OurClients = () => {
     const autoSlide = () => {
       if (!slider || isDragging) return;
 
-      scrollAmount += 1;
+      scrollAmount += 1.5;
       slider.scrollLeft = scrollAmount;
 
       if (scrollAmount >= slider.scrollWidth / 2) {
@@ -64,7 +67,7 @@ const OurClients = () => {
       if (!isDown) return;
       e.preventDefault();
       const x = e.pageX - slider.offsetLeft;
-      const walk = (x - startX) * 2;
+      const walk = (x - startX) * 1.5;
       slider.scrollLeft = scrollLeft - walk;
     };
 
@@ -89,7 +92,7 @@ const OurClients = () => {
       {[...logos, ...logos].map((item, index) => (
         <div
           key={index}
-          className="flex-shrink-0 mx-5 bg-white/90 backdrop-blur-md p-5 rounded-2xl shadow-lg min-w-[180px] flex flex-col items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+          className="flex-shrink-0 mx-3 bg-white/90 backdrop-blur-md p-5 rounded-2xl shadow-lg min-w-[180px] flex flex-col items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-2xl"
         >
           {/* Logo */}
           <img
