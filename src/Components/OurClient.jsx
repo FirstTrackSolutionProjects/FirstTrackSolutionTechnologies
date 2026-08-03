@@ -6,7 +6,7 @@ const OurClients = () => {
   const logos = [
     { name: "Jupiter Express", img: "/images/partners/jupiter.jpg" },
     { name: "7D Express", img: "/images/partners/7d.jpg" },
-    { name: "Shipwale", img: "/images/partners/shipwale.png" },
+    // { name: "Shipwale", img: "/images/partners/shipwale.png" },
     { name: "Fuddlins", img: "/images/partners/Fuddlins.jpeg" },
     { name: "FirstTrack", img: "/images/partners/FirstTrack.png" },
     { name: "GlowIndia", img: "/images/partners/glow india.jpg" },
