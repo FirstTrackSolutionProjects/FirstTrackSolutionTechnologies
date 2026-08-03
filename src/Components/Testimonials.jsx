@@ -18,14 +18,14 @@ const testimonialsData = [
     rating: 4,
     img: "/images/partners/7d.jpg",
   },
-  {
-    quote:
-      "Smooth experience with real-time tracking and easy booking. Perfect platform for hassle-free shipping.",
-    name: "Shipwale",
-    title: "Shipping Platform",
-    rating: 5,
-    img: "/images/partners/shipwale.png",
-  },
+  // {
+  //   quote:
+  //     "Smooth experience with real-time tracking and easy booking. Perfect platform for hassle-free shipping.",
+  //   name: "Shipwale",
+  //   title: "Shipping Platform",
+  //   rating: 5,
+  //   img: "/images/partners/shipwale.png",
+  // },
    {
     quote:
       "Great product quality and timely delivery. Their support team is always responsive and helpful.",
